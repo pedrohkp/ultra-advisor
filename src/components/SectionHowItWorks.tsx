@@ -9,12 +9,12 @@ const steps = [
     {
         icon: Search,
         title: "2. Escolha o framework",
-        description: "Navegue pela biblioteca organizada por situação (ex: Lançamento) ou nicho (ex: SaaS)."
+        description: "Navegue pela biblioteca organizada por categoria"
     },
     {
         icon: Zap,
         title: "3. Gere o comando",
-        description: "Copie o prompt validado, insira seu contexto e receba uma análise de nível executivo da IA."
+        description: "Copie o prompt validado e insira seu contexto na IA de sua preferência, receba uma análise de nível executivo da IA."
     }
 ]
 

@@ -1,6 +1,45 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
+import { Badge } from "@/components/ui/badge"
+import { Check, X } from "lucide-react"
+
+const plans = [
+    {
+        name: "ULTRA BASE",
+        price: "R$ 2.500",
+        description: "Para quem quer acesso imediato à biblioteca.",
+        features: [
+            { text: "Acesso limitado à biblioteca", included: true },
+            { text: "Context Builder Agent", included: true },
+            { text: "Guia de usos + exemplos", included: true },
+            { text: "Atualizações vitalícias (acesso limitado)", included: true },
+            { text: "Trial Optimizer (5 usos)", included: true },
+        ],
+        cta: "Começar com Base",
+        variant: "secondary",
+        highlight: false,
+        guarantee: "✅ Garantia de 7 dias"
+    },
+    {
+        name: "ULTRA PREMIUM",
+        price: "R$ 5.500",
+        description: "A experiência completa para consultoria de elite.",
+        features: [
+            { text: "Biblioteca expandida", included: true },
+            { text: "Context Builder Agent", included: true },
+            { text: "Guia de usos + exemplos", included: true },
+            { text: "Atualizações vitalícias (full access)", included: true },
+            { text: "Optimizer Agent ilimitado", included: true },
+            { text: "Exemplos de casos reais", included: true },
+            { text: "Prompt Finder (em breve...)", included: true },
+        ],
+        cta: "Escolher Premium",
+        variant: "default",
+        highlight: true,
+        tag: "Recomendado",
+        guarantee: "✅ Garantia de 7 dias"
+    }
+]
 
 export function SectionCTA() {
     return (
@@ -14,56 +53,51 @@ export function SectionCTA() {
                     Escolha seu plano e comece a tomar decisões de <span className="text-gradient">alto impacto</span> hoje mesmo.
                 </h2>
 
-                <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-12">
+                <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-12 text-left">
+                    {plans.map((plan, index) => (
+                        <Card
+                            key={index}
+                            className={`relative flex flex-col ${plan.highlight ? 'border-orange-500/50 bg-[#1A2B4F] glow-orange' : 'bg-[#0F1F3D]/50 border-white/5'}`}
+                        >
+                            {plan.highlight && (
+                                <div className="absolute -top-4 inset-x-0 flex justify-center">
+                                    <Badge className="bg-orange-500 text-white px-4 py-1 uppercase text-xs tracking-wider font-bold">
+                                        {plan.tag}
+                                    </Badge>
+                                </div>
+                            )}
 
-                    {/* Base Plan Card Small */}
-                    <Card className="bg-[#0A1628]/50 border-white/5 hover:border-blue-500/30 text-left">
-                        <CardHeader>
-                            <CardTitle className="text-xl text-white">ULTRA BASE</CardTitle>
-                            <p className="text-2xl font-bold text-white mt-2">R$ 2.500</p>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-2 mb-6">
-                                <li className="flex items-center gap-2 text-sm text-gray-400">
-                                    <Check className="w-4 h-4 text-green-500" /> Biblioteca Completa (35+)
-                                </li>
-                                <li className="flex items-center gap-2 text-sm text-gray-400">
-                                    <Check className="w-4 h-4 text-green-500" /> Context Builder
-                                </li>
-                            </ul>
-                        </CardContent>
-                        <CardFooter>
-                            <Button variant="secondary" className="w-full">Começar com Base</Button>
-                        </CardFooter>
-                    </Card>
+                            <CardHeader className="text-center pb-8 pt-10">
+                                <CardTitle className="text-2xl mb-2 text-white">{plan.name}</CardTitle>
+                                <div className="text-4xl font-bold text-white mb-2">{plan.price}</div>
+                                <p className="text-gray-400 text-sm">{plan.description}</p>
+                            </CardHeader>
 
-                    {/* Premium Plan Card Highlighted */}
-                    <Card className="bg-[#1A2B4F] border-orange-500/30 glow-orange text-left relative overflow-hidden">
-                        <div className="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase">
-                            Melhor escolha
-                        </div>
-                        <CardHeader>
-                            <CardTitle className="text-xl text-white">ULTRA PREMIUM</CardTitle>
-                            <p className="text-2xl font-bold text-white mt-2">R$ 5.500</p>
-                        </CardHeader>
-                        <CardContent>
-                            <ul className="space-y-2 mb-6">
-                                <li className="flex items-center gap-2 text-sm text-gray-200">
-                                    <Check className="w-4 h-4 text-orange-500" /> Tudo do Base +
-                                </li>
-                                <li className="flex items-center gap-2 text-sm text-gray-200">
-                                    <Check className="w-4 h-4 text-orange-500" /> Optimizer Agent Ilimitado
-                                </li>
-                                <li className="flex items-center gap-2 text-sm text-gray-200">
-                                    <Check className="w-4 h-4 text-orange-500" /> +15 Prompts Exclusivos
-                                </li>
-                            </ul>
-                        </CardContent>
-                        <CardFooter>
-                            <Button size="lg" className="w-full">Garantir Premium</Button>
-                        </CardFooter>
-                    </Card>
+                            <CardContent className="flex-1">
+                                <ul className="space-y-4">
+                                    {plan.features.map((feature, idx) => (
+                                        <li key={idx} className="flex items-start gap-3 text-sm">
+                                            {feature.included ? (
+                                                <Check className="w-5 h-5 text-green-500 shrink-0" />
+                                            ) : (
+                                                <X className="w-5 h-5 text-gray-600 shrink-0" />
+                                            )}
+                                            <span className={feature.included ? "text-gray-200" : "text-gray-600"}>
+                                                {feature.text}
+                                            </span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </CardContent>
 
+                            <CardFooter className="pt-4 pb-10 flex flex-col gap-4">
+                                <span className="text-sm font-medium text-green-400 self-start">{plan.guarantee}</span>
+                                <Button variant={plan.variant as "default" | "secondary"} className="w-full h-12 text-base">
+                                    {plan.cta}
+                                </Button>
+                            </CardFooter>
+                        </Card>
+                    ))}
                 </div>
             </div>
         </section>

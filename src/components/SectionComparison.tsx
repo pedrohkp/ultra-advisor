@@ -9,37 +9,35 @@ const plans = [
         price: "R$ 2.500",
         description: "Para quem quer acesso imediato à biblioteca.",
         features: [
-            { text: "Biblioteca completa (35+ prompts)", included: true },
+            { text: "Acesso limitado à biblioteca", included: true },
             { text: "Context Builder Agent", included: true },
-            { text: "Guia de uso + exemplos", included: true },
-            { text: "Atualizações vitalícias", included: true },
-            { text: "Trial Optimizer (7 dias, 20 usos)", included: true },
-            { text: "Optimizer ilimitado", included: false },
-            { text: "Multi-Step & Templates", included: false },
-            { text: "15 prompts premium exclusivos", included: false },
+            { text: "Guia de usos + exemplos", included: true },
+            { text: "Atualizações vitalícias (acesso limitado)", included: true },
+            { text: "Trial Optimizer (5 usos)", included: true },
         ],
         cta: "Começar com Base",
         variant: "secondary",
-        highlight: false
+        highlight: false,
+        guarantee: "✅ Garantia de 7 dias"
     },
     {
         name: "ULTRA PREMIUM",
         price: "R$ 5.500",
         description: "A experiência completa para consultoria de elite.",
         features: [
-            { text: "Biblioteca completa (35+ prompts)", included: true },
+            { text: "Biblioteca expandida", included: true },
             { text: "Context Builder Agent", included: true },
-            { text: "Guia de uso + exemplos", included: true },
-            { text: "Atualizações vitalícias", included: true },
+            { text: "Guia de usos + exemplos", included: true },
+            { text: "Atualizações vitalícias (full access)", included: true },
             { text: "Optimizer Agent ilimitado", included: true },
-            { text: "Multi-Step & Templates Inteligentes", included: true },
-            { text: "Biblioteca expandida (+15 prompts)", included: true },
-            { text: "30 Casos Reais Setoriais", included: true },
+            { text: "Exemplos de casos reais", included: true },
+            { text: "Prompt Finder (em breve...)", included: true },
         ],
         cta: "Escolher Premium",
         variant: "default",
         highlight: true,
-        tag: "Recomendado"
+        tag: "Recomendado",
+        guarantee: "✅ Garantia de 7 dias"
     }
 ]
 
@@ -93,7 +91,8 @@ export function SectionComparison() {
                                 </ul>
                             </CardContent>
 
-                            <CardFooter className="pt-8 pb-10">
+                            <CardFooter className="pt-4 pb-10 flex flex-col gap-4">
+                                <span className="text-sm font-medium text-green-400 self-start">{plan.guarantee}</span>
                                 <Button variant={plan.variant as "default" | "secondary"} className="w-full h-12 text-base">
                                     {plan.cta}
                                 </Button>
