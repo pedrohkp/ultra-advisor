@@ -20,6 +20,12 @@ export default function Home() {
             ULTRA ADVISOR
           </span>
         </Link>
+        <Link
+          href="/dashboard"
+          className="text-white bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg font-medium transition-colors text-sm border border-white/10"
+        >
+          Acessar Plataforma
+        </Link>
       </header>
       <SectionHero />
       <SectionProblem />
