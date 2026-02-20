@@ -1,0 +1,47 @@
+﻿Ôû▓ Next.js 16.1.6 (Turbopack)
+- Environments: .env.local
+
+node.exe : ÔÜá The "middleware" file convention 
+is deprecated. Please use "proxy" instead. 
+Learn more: https://nextjs.org/docs/messages/mid
+dleware-to-proxy
+No linha:1 caractere:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (ÔÜ 
+   á The "middle...leware-to-proxy:String) [],  
+   RemoteException
+    + FullyQualifiedErrorId : NativeCommandErro 
+   r
+ 
+  Creating an optimized production build ...
+Ô£ô Compiled successfully in 4.5s
+  Running TypeScript ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/9) ...
+  Generating static pages using 11 workers (2/9) 
+  Generating static pages using 11 workers (4/9) 
+  Generating static pages using 11 workers (6/9) 
+Ô£ô Generating static pages using 11 workers (9/9) in 1173.9ms
+  Finalizing page optimization ...
+
+Route (app)                  Revalidate  Expire
+Ôöî Ôùï /
+Ôö£ Ôùï /_not-found
+Ôö£ ãÆ /api/context/generate
+Ôö£ ãÆ /api/optimizer
+Ôö£ ãÆ /context-builder
+Ôö£ ãÆ /dashboard
+Ôö£ Ôùï /prompts                         1m      1y
+Ôö£ ãÆ /prompts/[slug]
+Ôö£ ãÆ /sign-in/[[...sign-in]]
+Ôöö ãÆ /sign-up/[[...sign-up]]
+
+
+ãÆ Proxy (Middleware)
+
+Ôùï  (Static)   prerendered as static content
+ãÆ  (Dynamic)  server-rendered on demand
+

@@ -1,0 +1,59 @@
+=== P26 Template (GOLD STD) ===
+Preciso transformar um caso de automação em conteúdo educativo.
+PROJETO: [Descreva o que você automatizou e o resultado]
+PÚBLICO-ALVO: [Donos de negócio que não sabem que precisam de automação / Profissionais que
+querem aprender n8n / Outros nichos específicos]
+Crie uma narrativa que:
+1. Comece com o problema real e palpável (não "automação é importante")
+2. Mostre o "antes" de forma tangível (tempo perdido, erros, frustração)
+3. Explique a solução sem jargão técnico desnecessário
+4. Quantifique o resultado (horas economizadas, erro reduzido, X% de melhoria)
+5. Termine com um insight não-óbvio (algo que você aprendeu construindo)
+Formato: [post LinkedIn / thread Twitter / case study completo]
+Evite: "transformação digital", "otimização de processos", "revolucionário". Use linguagem direta e
+específica.
+
+=== P1 Template ===
+Você é um analista sênior em uma consultoria de alto nível preparando um briefing de inteligência trimestral
+Crie um relatório abrangente de inteligência de mercado para [SETOR] cobrindo:
+1. Top 5 tendências reformulando o setor agora (com evidências, não vibes)
+2. 3 ameaças emergentes que a maioria das empresas ainda não está rastreando
+3. O que os jogadores mais inteligentes estão fazendo de diferente (cite nomes)
+4. Para onde o capital está fluindo (rodadas de investimento recentes, atividade
+
+=== P29 Template ===
+Preciso dominar: [habilidade/conhecimento] no menor tempo possível.
+Desenhe meu protocolo de aprendizado acelerado:
+DECOMPOSIÇÃO ESTRATÉGICA: → Quais são os 20% de sub-habilidades que geram 80% dos
+resultados → Qual é a sequência de aprendizado (o que precisa vir antes do quê) → O que posso
+ignorar completamente sem prejuízo real
+FEEDBACK LOOPS RÁPIDOS: → Como criar situações onde eu erro e corrijo em minutos, não
+semanas → Que projetos micro eu faço que testam compreensão imediatamente → Quem pode dar feedback específico de alta qualidade
+TRANSFERÊNCIA DE PADRÕES: → Que habilidade eu já domin
+
+=== P1 Example ===
+## Input
+Uma marca DTC de moda feminina (fast-to-mid) sente queda de conversão no mobile e aumento de devoluções. A CEO pediu um briefing trimestral para decidir: 1) se entra forte em marketplaces, 2) se investe em IA para personalização/size & fit, 3) se reposiciona para qualidade/durabilidade versus “tendência barata”.
+
+## Output
+- Resumo executivo (3 frases no máximo)
+1. O setor está migrando de “aquisição paga” para eficiência de margem via retenção,
+recompras e redução de devoluções. 2) Que
+
+=== P26 Example ===
+## Input
+Eu implementei para um cliente de RH uma automação simples: “Triagem de solicitações do RH” (formulário + planilha + regras + e-mails). Antes tudo entrava por WhatsApp e e-mail sem prioridade. Depois, criamos categorias e SLAs e automatizamos encaminhamento. Quero transformar isso em conteúdo educativo.
+
+## Output
+Preciso transformar um projeto de triagem e automação de solicitações do RH em
+conteúdo educativo.
+PROJETO/INICIATIVA: criei um fluxo onde solicitações entram por formulário, 
+
+=== P23 Example ===
+## Input
+Estou criando uma oferta de consultoria chamada “Diagnóstico de RH em 10 dias” para médias empresas (100–300 pessoas). Já tenho uma landing page e um roteiro de call. A promessa atual é: “organizar processos de RH e reduzir turnover”. Estou em estágio de rascunho e preciso ajustar antes de começar prospecção.
+
+## Output
+Preciso de feedback sobre: oferta “Diagnóstico de RH em 10 dias” (landing + roteiro
+de call).
+Contexto: para médias empresas (100–300), RH enxuto, resolve caos operacion

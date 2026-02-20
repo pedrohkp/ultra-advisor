@@ -1,0 +1,64 @@
+=== PROMPT 16 (total lines: 97) ===
+First 3 lines: [Validação da Demanda Antes da Construção] | SITE (Ponta do Iceberg) | Nome: Validação de Demanda Pré-Construção
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 17 (total lines: 99) ===
+First 3 lines: [Decomposição Recursiva] | SITE (Ponta do Iceberg) | Nome: Decomposição Recursiva de Problemas
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 18 (total lines: 109) ===
+First 3 lines: [Arbitragem de Conhecimento] | SITE (Ponta do Iceberg) | Nome: Vantagem por Transferência de Conhecimento
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 19 (total lines: 96) ===
+First 3 lines: [Janela de Oportunidade] | SITE (Ponta do Iceberg) | Nome: Análise de Timing Perfeito
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 20 (total lines: 77) ===
+First 3 lines: [Contra-Posicionamento] | SITE (Ponta do Iceberg) | Nome: Estratégia de Movimento Contrário
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 21 (total lines: 97) ===
+First 3 lines: [Exposição de Vieses] | SITE (Ponta do Iceberg) | Nome: Caça aos Seus Próprios Vieses
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 22 (total lines: 92) ===
+First 3 lines: [Alavancagem Máxima] | SITE (Ponta do Iceberg) | Nome: Identificação de Ações de Alta Alavancagem
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=true
+
+=== PROMPT 23 (total lines: 70) ===
+First 3 lines: [Feedback Específico] | SITE (Ponta do Iceberg) | Nome: Feedback Específico (Brutal e Útil)
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=false ExemploUso=true Input=true Output=false
+
+=== PROMPT 24 (total lines: 112) ===
+First 3 lines: [Próximo Passo Físico] | SITE (Ponta do Iceberg) | Nome: Desbloqueio de Ação Imediata
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 25 (total lines: 88) ===
+First 3 lines: [ARQUITETURA DE SOLUÇÕES] | SITE (Ponta do Iceberg) | Nome: Arquitetura de Solução Técnica
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 26 (total lines: 91) ===
+First 3 lines: [STORYTELLING TÉCNICO] | SITE (Ponta do Iceberg) | Nome: Transformar Caso Técnico em História
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 27 (total lines: 113) ===
+First 3 lines: [Efeito Volante] | SITE (Ponta do Iceberg) | Nome: Sistema de Momentum Auto-Reforçado
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+
+=== PROMPT 28 (total lines: 121) ===
+First 3 lines: [Entendimento Estrutural] | SITE (Ponta do Iceberg) | Nome: Entendimento Estrutural (Loops e Alavancas)
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=false ExemploUso=true Input=true Output=false
+
+=== PROMPT 29 (total lines: 129) ===
+First 3 lines: [Meta-Learning] | SITE (Ponta do Iceberg) | **Nome:** Protocolo de Aprendizado Acelerado
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=true ExemploUso=true Input=true Output=false
+  Bold markers found: **Nome:**, **Micro-descrição:**, **Nome Completo:**, **Para que serve:**, **Quando usar:**, **Prompt Completo:**
+
+=== PROMPT 30 (total lines: 131) ===
+First 3 lines: [Pré-Mortem] | SITE (Ponta do Iceberg) | Nome: Pré-Mortem Brutal (10 Razões de Falha)
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=false ExemploUso=true Input=true Output=false
+
+=== PROMPT 31 (total lines: 118) ===
+First 3 lines: Definição de Público-Alvo Ideal (ICP WWWH) | 📄 SITE (Ponta do Iceberg) | Nome: Definição de Público-Alvo Ideal
+  Markers: NomeCompleto=true ParaQueServe=true QuandoUsar=true PromptCompleto=false ExemploUso=true Input=false Output=false

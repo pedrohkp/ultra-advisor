@@ -1,0 +1,551 @@
+========== PROMPT 16 ==========
+[Validação da Demanda Antes da Construção]
+SITE (Ponta do Iceberg)
+Nome: Validação de Demanda Pré-Construção
+Micro-descrição: Antes de construir, teste se alguém pagaria. Experimento de 7 dias para validar
+demanda real, não pesquisa de intenção.
+PLATAFORMA (Conteúdo Completo)
+Nome Completo: Demand Validation Before Building — Validação de Demanda Lean
+Para que serve: Testar se existe demanda real para produto/serviço ANTES de construir, usando
+experimentos de baixo custo que medem comportamento de compra (não intenção declarada).
+Quando usar:
+● Antes de investir tempo/dinheiro em construção
+● Ideia nova sem validação
+● Sentimento de "isso deveria vender, por que não vende?"
+● Pivô ou novo segmento
+● Sempre que custo de construir > custo de testar
+Prompt Completo:
+Você é um consultor de lean startup que validou 100+ ideias de produto.
+Minha ideia: [DESCREVA SUA IDEIA DE PRODUTO]
+Cliente alvo: [QUEM]
+Ponto de preço que estou considerando: [PREÇO]
+Execute um framework de validação de demanda pré-construção:
+1. VALIDAÇÃO DE PROBLEMA: Esse é um problema real? Pontue o nível de dor (vitamina vs
+analgésico vs cirurgia). Que evidência existe de que pessoas buscam ativamente soluções?
+2. VALIDAÇÃO DE SOLUÇÃO: Por que alguém escolheria isso em vez do workaround atual? Qual é o
+custo de mudança?
+3. DISPOSIÇÃO A PAGAR: A [PREÇO], com quais alternativas estou competindo? Essa é uma compra
+"cale a boca e pegue meu dinheiro" ou "deixe-me pensar"?
+
+4. PLANO DE VALIDAÇÃO RÁPIDA: Desenhe um experimento de 7 dias que posso executar com
+$0-$500 para testar demanda real (não pesquisas — sinais reais de compra)
+5. CRITÉRIOS DE ELIMINAÇÃO: Quais resultados do experimento deveriam me fazer matar essa ideia?
+Seja impiedoso. A maioria das ideias deveria morrer antes de código ser escrito. A minha é uma
+delas?
+Exemplo de Uso:
+● Input (problema/análise necessária/projeto iniciado):
+Minha ideia: “Cobrança Inteligente + Previsão de Caixa” dentro de um SaaS B2B de
+gestão financeira: o sistema identifica clientes com risco de atraso, sugere ações
+(WhatsApp/email), e projeta fluxo de caixa 30/60/90 dias com base em histórico de
+pagamentos e pipeline.
+Cliente alvo: PMEs de serviços (agências, consultorias, escritórios) com 5–50
+pessoas, que faturam R$ 100k–R$ 2M/mês e sofrem com inadimplência e
+descontrole de caixa.
+Ponto de preço que estou considerando: R$ 499/mês.
+● [OUTPUT]:
+VALIDAÇÃO DE PROBLEMA
+● É real? Sim. “Falta de previsibilidade de caixa” e “cobrança reativa” são dores
+recorrentes em PMEs.
+● Nível de dor: geralmente analgésico, às vezes cirurgia (quando a empresa quebra
+por caixa, não por lucro).
+● Evidência de busca ativa (proxy):
+○ PMEs já pagam por ERP/financeiro, cobrança, boleto/PIX, conciliação, CRM.
+Isso indica “orçamento” e busca por solução.
+○ Workarounds comuns: planilha + banco + lembretes manuais + contador.
+Workaround persistente = dor existe, mas solução “boa o bastante” compete
+com você.
+VALIDAÇÃO DE SOLUÇÃO
+● Por que escolher vs workaround? Só ganha se entregar:
+○ menos tempo (cobrança e follow-up semi-automáticos) e
+○ menos surpresa (previsão razoável + alertas de risco) e
+○ menos atrito (integração com banco/PIX/boleto e canais).
+● Custo de mudança: alto-médio. Financeiro é “core”, mexer nisso dá medo. Se exigir
+migração total, morre. Se funcionar como camada plugável em cima do que já usam
+(banco + emissor + ERP), chance sobe.
+DISPOSIÇÃO A PAGAR (R$ 499/mês)
+● Alternativas competindo com você:
+○ ERP/financeiro (já “inclui” parte do problema)
+○ ferramentas de cobrança (focadas em recebimento)
+○ contador/BPO financeiro (terceirização)
+○ planilha (custo quase zero)
+● Nesse preço, tende a ser compra “deixe-me pensar”, a menos que você prove ROI
+claro tipo: “recuperei R$ 15k/mês de atrasos e reduzi 6h/semana”.
+PLANO DE VALIDAÇÃO RÁPIDA (7 dias, $0–$500, sem pesquisa)
+Objetivo: provar intenção de compra com sinais reais (reuniões, depósito, piloto pago).
+● Dia 1: criar uma oferta “sem produto”
+○ Página simples (Notion/Tally): “Aumente recebimento e previsibilidade do
+caixa em 30 dias”
+○ 3 bullets de resultado + preço R$ 499/mês + CTA: “Quero entrar no piloto
+pago (10 vagas)”
+● Dias 2–3: outreach para 60–100 decisores (WhatsApp/LinkedIn/email)
+○ Segmento: donos/financeiro de PMEs de serviço
+○ Mensagem curta pedindo 15 min + link do piloto pago
+● Dias 4–5: calls com roteiro de “venda” (não entrevista)
+○ Fechar piloto pago: R$ 199 por 30 dias (desconta do plano depois)
+○ Entrega manual (concierge): você faz a previsão + régua de cobrança com
+base nos dados do cliente
+● Dias 6–7: coletar dinheiro e executar 2–3 entregas
+○ Se ninguém paga nem R$ 199, a demanda não está quente ou o
+posicionamento está fraco.
+CRITÉRIOS DE ELIMINAÇÃO (mate se acontecer)
+● Você fala com 15+ leads qualificados e:
+○ 0 pagamentos (nem simbólico) e
+○ menos de 3 pessoas topam enviar dados reais (extrato/contas a receber)
+para você montar “na mão”.
+Isso indica: dor existe, mas não é prioridade pagável nesse formato/preço.
+Veredito impiedoso: a dor é real, mas a ideia só vive se você evitar “novo ERP” e vender
+como ganho mensurável em recebimento + previsibilidade com integração mínima. Caso
+contrário, vira feature de ERP ou planilha “boa o bastante” te mata.
+
+
+========== PROMPT 23 ==========
+[Feedback Específico]
+SITE (Ponta do Iceberg)
+Nome: Feedback Específico (Brutal e Útil)
+Micro-descrição: Aponta o que está fraco e por quê. Diz como consertar com ações
+concretas, testa clareza e revela pontos cegos.
+PLATAFORMA (Conteúdo Completo)
+Nome Completo: Prompt de Feedback Específico — Parte Fraca, Parte Forte, Clareza e
+Blind Spots
+Para que serve: Receber feedback acionável sobre um trabalho/ideia/projeto, isolando o
+componente mais fraco, propondo melhorias práticas, preservando o que funciona,
+verificando se a mensagem central está clara e expondo premissas escondidas e lacunas
+críticas.
+Quando usar:
+● Antes de lançar/vender/apresentar algo importante
+● Quando você está “perto demais” e perdeu senso crítico
+● Para transformar rascunho confuso em entrega objetiva
+● Para evitar elogio vazio e crítica genérica
+● Para descobrir o que falta antes que o mercado aponte
+Exemplo de Uso:
+● Input (problema/análise necessária/projeto iniciado):
+Estou criando uma oferta de consultoria chamada “Diagnóstico de RH em 10 dias”
+para médias empresas (100–300 pessoas). Já tenho uma landing page e um roteiro
+de call. A promessa atual é: “organizar processos de RH e reduzir turnover”. Estou
+em estágio de rascunho e preciso ajustar antes de começar prospecção.
+● [OUTPUT]:
+Preciso de feedback sobre: oferta “Diagnóstico de RH em 10 dias” (landing + roteiro
+de call).
+Contexto: para médias empresas (100–300), RH enxuto, resolve caos operacional +
+turnover; estágio: rascunho pronto para prospecção.
+PARTE MAIS FRACA
+○ O componente mais fraco: a promessa principal (“organizar RH e reduzir
+turnover”) é ampla demais.
+○ O que não funciona (brutal): isso soa como consultoria genérica. “Organizar
+processos” é benefício de consultor, não resultado comprado pelo dono. E
+“reduzir turnover” em 10 dias parece mentira ou ingenuidade (turnover é
+lagging indicator).
+○ Como eu melhoraria (ação concreta):
+■ Troque a promessa para um resultado de diagnóstico + plano
+executável, não “redução” imediata. Ex.:
+■ “Em 10 dias: mapa de gargalos + 12 correções priorizadas +
+kit de implantação 30/60/90 + indicadores que o RH consegue
+medir semanalmente.”
+■ Amarre em um recorte: “turnover em até 90 dias”, “onboarding”,
+“rotina de gestores”, “DP/compliance”.
+■ Coloque 3 entregáveis “irrefutáveis” na landing (coisas que o cliente
+recebe e pode usar no dia seguinte).
+● PARTE MAIS FORTE
+○ O que eu manteria exatamente como está: o prazo curto (10 dias) e o
+framing de “diagnóstico” (não “transformação”).
+○ Por que funciona: média empresa compra velocidade e clareza. Diagnóstico
+bem vendido reduz risco de compra (“não vou casar com uma consultoria de
+6 meses sem entender o buraco”).
+● TESTE DE CLAREZA
+○ Minha reformulação da ideia central: “Você quer vender um pacote rápido
+para entrar na empresa, entender onde o RH está travando, e sair com um
+plano priorizado e pronto para executar.”
+○ Onde você foi confuso: você disse “reduzir turnover” como se fosse entrega
+do diagnóstico. Se você quis dizer “identificar causas e montar plano para
+reduzir”, faltou explicitar.
+● BLIND SPOTS
+○ O que está faltando:
+■ Critério claro de escopo (quais processos entram, quantas
+entrevistas, quais dados).
+■ Um anti-fit (para quem NÃO serve) — isso aumenta confiança e evita
+cliente errado.
+■ Um “o que você precisa me dar” (dados mínimos + disponibilidade)
+para não virar projeto travado.
+○ Premissa assumida e não explícita: que a empresa tem dados minimamente
+confiáveis e que gestores vão participar. Se não participarem, diagnóstico
+vira opinião.
+
+
+========== PROMPT 28 ==========
+[Entendimento Estrutural]
+SITE (Ponta do Iceberg)
+Nome: Entendimento Estrutural (Loops e Alavancas)
+Micro-descrição: Mapeia a estrutura por trás de um problema. Mostra loops, atrasos,
+alavancas e efeitos colaterais para prever o que acontece.
+PLATAFORMA (Conteúdo Completo)
+Nome Completo: Prompt de Entendimento Estrutural — Diagrama de Loops Causais,
+Delays e Alavancas
+Para que serve: Construir um modelo sistêmico do fenômeno (não dos sintomas),
+identificando loops de reforço e balanceamento, delays que confundem a causalidade,
+pontos de alta alavancagem e consequências não-intencionais de “soluções óbvias”.
+Quando usar:
+● Problema recorrente que volta após “consertos”
+● Muito palpite e pouca causalidade (“é culpa de X”)
+● Ações rápidas resolvem hoje e pioram amanhã
+● Você precisa escolher onde intervir com alto impacto
+● Quer prever efeitos antes de mexer no sistema
+Prompt completo:
+"Observo o seguinte fenômeno/problema: [descreva situação que você quer entender
+profundamente].
+Mapeie a estrutura sistêmica, não os sintomas:
+LOOPS DE FEEDBACK: → Identifique loops de reforço (o que amplifica o fenômeno) →
+Identifique
+loops de balanceamento (o que limita ou estabiliza) → Qual loop é dominante agora e por
+quê
+DELAYS TEMPORAIS: → Onde há lags entre ação e consequência que criam ilusões →
+Como esses
+delays fazem as pessoas errarem a causalidade
+
+ALAVANCAS DE MUDANÇA: → Onde estão os pontos de alta alavancagem (pequena
+ação, grande
+efeito) → Por que esses pontos são contra-intuitivos ou negligenciados → Que intervenção
+específica eu faria nesses pontos
+CONSEQUÊNCIAS NÃO-INTENCIONAIS: → Que "soluções" óbvias piorariam o problema
+a longo prazo
+→ Por que o sistema resiste a mudanças aparentemente boas
+Desenhe o diagrama de loops causais. Depois me diga: → Por que o sistema se comporta
+assim (não
+quem está errado) → Onde intervir para mudança estrutural, não sintomática → O que
+acontece se
+eu fizer X (trace as consequências pelos loops)
+Quero entender o sistema tão bem que consigo prever comportamentos futuros."
+Exemplo de Uso:
+● Input (problema/análise necessária/projeto iniciado):
+A escola percebe o fenômeno: muita gente compra e começa o curso, mas poucos
+concluem e poucos aplicam no trabalho. A equipe reage com “mais aulas” e “mais
+conteúdo”, mas isso parece piorar a conclusão. Quer entender a estrutura sistêmica
+por trás da evasão e baixa aplicação, para prever o que acontece se aumentar
+carga, bônus, ou tutoria.
+● [OUTPUT]:
+Observo o seguinte fenômeno/problema: alta evasão + baixa aplicação prática em
+cursos corporativos online, apesar de boa avaliação inicial.
+LOOPS DE FEEDBACK
+Loops de reforço (amplificam o fenômeno)
+● R1 (Sobrecarga → evasão): mais conteúdo/promessas → aluno vê “montanha” →
+procrastina → atrasa → culpa/ansiedade → evade → equipe interpreta como “faltou
+conteúdo/clareza” → adiciona mais conteúdo.
+● R2 (Baixa aplicação → menor valor percebido): aluno consome passivamente → não
+aplica → não vê resultado → perde motivação → abandona → reduz prova social
+real → marketing apela para “mais bônus” em vez de resultado → atrai perfil mais
+“colecionador” → menos aplicação.
+● R3 (Crescimento sem suporte → pior experiência): turma maior → menos
+resposta/feedback → aluno trava mais tempo → abandona → NPS cai → precisa de
+mais volume para bater meta → cresce mais ainda sem suporte.
+
+Loops de balanceamento (limitam/estabilizam)
+● B1 (Filtro e pré-requisito): aumentar pré-requisitos/triagem → reduz alunos “errados”
+→ melhora conclusão, mas limita volume.
+● B2 (Módulo mínimo obrigatório): reduzir escopo e exigir entregável → aumenta
+aplicação → aumenta valor percebido → aumenta motivação → melhora conclusão
+(estabiliza para cima).
+Loop dominante agora e por quê
+● Dominante: R1 (sobrecarga) + R2 (passividade).
+Porque a resposta padrão do time (“vamos adicionar”) alimenta exatamente o
+mecanismo que derruba execução.
+DELAYS TEMPORAIS (lags)
+● Lag 1: melhora de conteúdo hoje só aparece em conclusão semanas depois. No
+meio, o time muda mais coisas e confunde causa.
+● Lag 2: aplicação prática no trabalho depende do ciclo real do aluno (reuniões, 1:1,
+projetos). Se o curso não encaixa nesses ciclos, parece “não funcionou”, mas foi
+timing.
+● Ilusão gerada: “o conteúdo está ruim” quando o problema é design de execução +
+encaixe no dia a dia.
+ALAVANCAS DE MUDANÇA (alta alavancagem)
+● Alavanca 1: reduzir escopo e aumentar entrega obrigatória.
+○ Contra-intuitivo: parece “empobrecer” o curso, mas aumenta aplicação e
+valor percebido.
+○ Intervenção: definir um Mínimo Viável de Resultado (MVR): 1 entregável por
+semana, ligado ao trabalho real (ex.: roteiro de 1:1 aplicado e reportado).
+● Alavanca 2: feedback curto e frequente.
+○ Intervenção: checkpoints de 5 min + rubrica simples (“ok/não ok”) + exemplo
+de excelência.
+● Alavanca 3: alinhamento com gestor (B2B).
+○ Intervenção: e-mail automático para gestor com “o que pedir/observar” em 2
+semanas.
+CONSEQUÊNCIAS NÃO-INTENCIONAIS
+● “Solução óbvia” que piora: adicionar bônus/aulas → aumenta sobrecarga → cai
+conclusão → cai aplicação → cai prova social real.
+● Por que o sistema resiste: o time é recompensado por volume vendido, não por
+resultado aplicado; então o sistema tende a escolher intervenções que aumentam
+“atratividade”, não eficácia.
+
+Diagrama de loops causais (texto)
+● Mais conteúdo → (↑) percepção de esforço → (↑) procrastinação → (↑) atraso → (↑)
+evasão → (↓) casos reais de sucesso → (↑) necessidade de “marketing com bônus”
+→ (↑) promessa/conteúdo → (↑) mais conteúdo
+● Mais feedback rápido → (↑) correção imediata → (↑) aplicação → (↑) resultado
+percebido → (↑) motivação → (↑) conclusão → (↑) casos reais → (↑) conversão com
+prova → (↑) capacidade de investir em suporte → (↑) feedback rápido
+Por que o sistema se comporta assim (não “quem está errado”)
+Porque incentivos + delays empurram o time para “parecer completo” (conteúdo) em vez de
+“gerar execução” (entregáveis + feedback).
+Onde intervir para mudança estrutural, não sintomática
+● Trocar métrica norte de “aulas entregues” para % de entregáveis aplicados e
+conclusão.
+● Encaixar o curso no calendário real do aluno (entregas que acontecem no trabalho).
+O que acontece se eu fizer X (ex.: dobrar conteúdo e bônus)
+● Curto prazo: pode subir conversão por “mais valor percebido”.
+● Médio prazo: sobe sobrecarga → cai conclusão → cai prova social real → aumenta
+dependência de desconto/bônus → degrada a base.
+Previsão: o sistema “vira uma esteira de venda” com baixo impacto e alto churn.
+
+
+========== PROMPT 30 ==========
+[Pré-Mortem]
+SITE (Ponta do Iceberg)
+Nome: Pré-Mortem Brutal (10 Razões de Falha)
+Micro-descrição: Assume que deu tudo errado e lista por que. Mostra sinais precoces e
+ações preventivas para você cortar risco antes de começar.
+PLATAFORMA (Conteúdo Completo)
+Nome Completo: Prompt de Pré-Mortem — Falhas Técnicas, de Planejamento, Humanas e
+Externas (com Sinais e Prevenção)
+Para que serve: Simular um “fracasso total” 6 meses à frente para identificar as 10 causas
+mais prováveis de desastre, como elas apareceriam no dia a dia, quais alertas surgiriam
+cedo e quais ações você deve tomar agora para reduzir risco — antes de gastar tempo,
+dinheiro e reputação.
+Quando usar:
+● Antes de iniciar projeto crítico (prazo curto, alta visibilidade, alto risco)
+● Quando há dependências e integrações que podem quebrar
+● Quando você está confiante demais e precisa testar fragilidades
+● Para alinhar expectativas e responsabilidades do time
+● Para transformar risco abstrato em prevenção concreta
+Prompt completo:
+"Estou prestes a iniciar o seguinte projeto: [descreva o projeto, escopo, prazo, recursos].
+Agora imagine que estamos 6 meses no futuro e esse projeto falhou completamente. Foi um
+desastre.
+Liste as 10 razões mais prováveis para essa falha, organizadas por:
+→ Falhas técnicas (o que quebrou, não escalou, não integrou)
+→ Falhas de planejamento (o que foi subestimado, ignorado, mal dimensionado)
+→ Falhas humanas (comunicação, expectativas, capacidade)
+→ Falhas externas (mudanças de contexto, dependências de terceiros)
+Para cada razão:
+→ Descreva como essa falha se manifestaria na prática
+→ Qual seria o sinal de alerta precoce dessa falha
+→ Qual ação preventiva eu deveria tomar AGORA para mitigar esse risco
+Seja brutal. Não me poupe. Quero os cenários realistas de falha, não apenas os teóricos."
+Exemplo de Uso:
+● Input (problema/análise necessária/projeto iniciado):
+Estou prestes a iniciar o seguinte projeto: Módulo de Conciliação Bancária
+Automática + Categorização Inteligente dentro de um SaaS B2B de gestão
+financeira.
+Escopo: integrar com Open Finance e/ou conectores bancários para puxar extrato
+diário, fazer matching com contas a pagar/receber, sugerir categoria/centro de custo
+e permitir regra de conciliação por cliente.
+Prazo: 10 semanas até GA (geral), com beta em 6 semanas.
+Recursos: 1 PM (meio período), 2 devs full-stack, 1 dev data/ML (meio período), 1
+designer (sob demanda). Sem time de CS dedicado ao piloto.
+● [OUTPUT]:
+Falhas técnicas (o que quebrou, não escalou, não integrou)
+1. Integração bancária instável (conectores quebrando / dados incompletos)
+● Como falha na prática: extrato vem com buracos, atrasos de dias, duplicado; cliente
+perde confiança e volta pra planilha.
+● Sinal precoce: aumento de tickets “saldo não bate” + picos de reconexão de conta +
+webhooks falhando.
+● Ação preventiva agora: definir quais bancos/contas entram no GA (escopo mínimo),
+montar monitoramento de integridade (contagem de transações/dia por conta,
+latência, duplicidade) e um modo degradado (upload CSV/import manual) desde o
+dia 1.
+2. Matching “inteligente” gerando falsos positivos (conciliando errado)
+● Como falha na prática: sistema marca como conciliado pagamento errado, bagunça
+DRE/centro de custo e cria retrabalho pior que manual.
+● Sinal precoce: muitos “desfazer conciliação” + baixa taxa de confirmação das
+sugestões + auditoria interna do cliente acusando inconsistências.
+● Ação preventiva agora: começar com matching determinístico (chaves fortes:
+identificador, valor, data, contraparte) e só depois heurística/ML; exigir confirmação
+humana para matches de baixa confiança; log detalhado “por que sugerimos isso”.
+3. Categorização fraca por falta de contexto (descrição bancária ruim)
+● Como falha na prática: sugestões genéricas (“Outros”), categorias erradas, baixa
+utilidade percebida.
+● Sinal precoce: usuários ignoram sugestões e criam regra manual; NPS do recurso
+baixo apesar de “funcionar”.
+
+● Ação preventiva agora: basear categorização em regras do usuário primeiro
+(fornecedor/descrição/valor recorrente) e oferecer biblioteca de regras; ML só se
+tiver dataset real e labels consistentes.
+4. Performance e custo explodindo (processamento de extrato não escala)
+● Como falha na prática: conciliação demora horas, filas crescem, custo de infra sobe;
+clientes grandes ficam impossíveis.
+● Sinal precoce: tempo médio de processamento subindo semana a semana; picos de
+CPU/DB; jobs reprocessando demais.
+● Ação preventiva agora: arquitetura com processamento assíncrono, filas,
+idempotência; definir limites (transações/mês por plano); otimizar consultas e
+armazenar dados com chaves adequadas.
+Falhas de planejamento (o que foi subestimado, ignorado, mal
+dimensionado)
+5. Escopo grande demais para 10 semanas (vira “novo ERP” disfarçado)
+● Como falha na prática: você tenta suportar todos os bancos, todos os formatos,
+multiempresas, multi-moeda, parcelamentos, split, etc. Não entrega nada confiável.
+● Sinal precoce: backlog crescendo mais rápido do que entrega; “só falta mais um
+banco” vira mantra semanal.
+● Ação preventiva agora: declarar o MVP brutal: 3 bancos + 2 casos de uso + 1 fluxo
+principal. Todo o resto vira “não agora”. Definir explicitamente o que NÃO entra.
+6. Você não definiu “pronto” (critério de aceitação é subjetivo)
+● Como falha na prática: o time acha que “funciona”, mas o cliente diz “não confio”.
+Lançamento vira guerra de opiniões.
+● Sinal precoce: QA vira “testa aí”; bugs são “difíceis de reproduzir”; discussões
+intermináveis sobre edge cases.
+● Ação preventiva agora: criar critérios de pronto mensuráveis: taxa de matches
+corretos (com amostra auditada), tempo de processamento, taxa de reconciliação
+concluída, limites de erro aceitáveis, e cenários obrigatórios (pagamento parcial,
+duplicado, estorno).
+7. Sem piloto guiado (você lança sem aprender com dados reais)
+● Como falha na prática: o produto só encontra os problemas depois do GA, com
+clientes pagando e irritados.
+● Sinal precoce: beta com poucos usuários ativos; “vamos lançar pra aprender” sem
+canal de feedback estruturado.
+● Ação preventiva agora: fechar 5–10 clientes piloto antes do build terminar, com
+compromisso de uso semanal. Criar rotina fixa: 2 calls/semana + análise de logs +
+correções rápidas.
+Falhas humanas (comunicação, expectativas, capacidade)
+8. Promessa comercial maior que a entrega (“automático”, “sem esforço”)
+● Como falha na prática: marketing vende “um clique e acabou”; na vida real precisa
+configurar regras e revisar exceções. Cliente se sente enganado e cancela.
+● Sinal precoce: demos com linguagem absoluta (“nunca erra”, “100% automático”);
+CS recebendo reclamação de expectativa.
+
+● Ação preventiva agora: alinhar mensagem: “automação assistida”. Definir scripts de
+venda e onboarding com o que é automático vs o que exige revisão.
+9. Time sem dono claro do resultado (produto, dados e suporte ficam no limbo)
+● Como falha na prática: bug de integração vira “não é meu”; modelo ruim vira
+“dados”; onboarding ruim vira “produto”. Nada fecha.
+● Sinal precoce: handoffs frequentes, tarefas “aguardando fulano”, nenhuma métrica
+tem owner.
+● Ação preventiva agora: nomear um DR (directly responsible) por: integração,
+matching, UX de revisão, observabilidade, e piloto. Uma pessoa responde pelo
+número, não pela opinião.
+Falhas externas (mudanças de contexto, dependências de terceiros)
+10. Dependência de Open Finance/terceiros muda regra, limita acesso ou quebra SLA
+● Como falha na prática: você perde cobertura de bancos, muda formato, ou a
+autenticação fica mais friccionada; usuários desistem no onboarding.
+● Sinal precoce: atualizações frequentes do provedor; aumento de falhas de
+consentimento; reclamações de “tenho que reconectar sempre”.
+● Ação preventiva agora: desenhar estratégia de redução de dependência: fallback de
+CSV, múltiplos provedores (se viável), e um fluxo claro de reconexão. E,
+principalmente, escopo por banco baseado no que é estável hoje.
+
+
+========== PROMPT 31 ==========
+Definição de Público-Alvo Ideal (ICP WWWH)
+📄 SITE (Ponta do Iceberg)
+Nome: Definição de Público-Alvo Ideal
+Micro-descrição: Descubra exatamente quem é seu cliente perfeito usando o método
+WWWH, gerando declarações de posicionamento magnéticas e mapeando os 5 maiores
+pontos de dor que convertem.
+🖥 PLATAFORMA (Conteúdo Completo)
+Nome Completo: ICP WWWH — Definição de Público-Alvo Ideal
+Para que serve: Estruturar a definição do seu Ideal Customer Profile (ICP) através do
+método WWWH (Quem, O Quê, Por Quê, Como), gerando declarações de posicionamento
+claras, magnéticas e 3-5 pontos de dor acionáveis que orientam marketing, vendas e
+desenvolvimento de produto.
+Quando usar:
+● Lançamento de novo produto/serviço
+● Refinamento de posicionamento de marca
+● Criação de campanhas de marketing direcionadas
+● Desenvolvimento de copy para landing pages
+● Preparação de pitch de vendas ou investimento
+● Validação de fit produto-mercado
+● Redefinição estratégica de público após pivô
+Prompt completo:
+Você é um coach de negócios me ajudando a definir minha Persona de Cliente Ideal (ICP)
+usando o método WWWH.
+Vou preencher algumas lacunas sobre meu público ideal abaixo. Por favor, pegue minhas
+respostas e:
+1. Resuma-as em uma tabela WWWH clara.
+2. Gere 3 frases fortes de ICP baseadas nas minhas respostas, usando este formato:
+"Eu ajudo [QUEM] que está [O QUÊ], e quer [POR QUÊ], dando-lhe [COMO]."
+3. Identifique 3 a 5 dos maiores pontos de dor com que essa persona se depara, cada um
+escrito como:
+a. Ponto de resumo em negrito
+b. Uma explicação clara em uma frase
+Aqui estão minhas entradas:
+QUEM eles são?
+→ [ex: profissionais de nível médio com idade entre 28 e 45 anos trabalhando em empregos
+corporativos]
+O QUÊ é a situação atual deles?
+→ [ex: eles têm um emprego em tempo integral, mas querem mais flexibilidade e controle
+sobre sua agenda]
+POR QUÊ eles precisam de ajuda?
+→ [ex: eles se sentem sobrecarregados e inseguros sobre por onde começar ao lançar um
+produto digital]
+COMO eles preferem receber ajuda?
+→ [ex: eles querem um sistema passo a passo que seja simples, rápido e os leve à sua
+primeira pequena vitória]
+Por favor, retorne:
+1. Uma tabela WWWH clara
+2. 3 declarações de posicionamento ICP concisas e magnéticas baseadas nas minhas
+entradas
+3. 5 maiores pontos de dor em formato de resumo em negrito, com uma explicação clara em
+uma frase
+
+Exemplo de Uso:
+Input:
+W 	Definição 	Resposta (situação específica — Escola/Curso online B2B)
+Who
+(QUEM)
+Quem é a
+persona
+Gerente/Coordenador de T&amp;D (RH) de empresa de
+serviços (200–800 colaboradores), 30–42 anos, responsável
+por capacitar times comercial e atendimento; responde ao
+Diretor(a) de RH e negocia com Compras.
+What (O
+QUÊ)
+Situação atual Tem meta de reduzir retrabalho e padronizar atendimento,
+mas o onboarding é inconsistente (cada líder “ensina do seu
+jeito”), o LMS atual é subutilizado e os treinamentos viram
+“evento” sem continuidade.
+Why (POR
+QUÊ)
+Por que
+precisa de
+ajuda
+Precisa mostrar impacto em 60–90 dias (tempo de
+atendimento, qualidade, conversão) para justificar orçamento;
+está pressionado por alta rotatividade e reclamações de
+clientes, sem tempo para desenhar trilhas e medir ROI.
+
+How
+(COMO)
+Como prefere
+receber ajuda
+Quer uma trilha pronta + personalização leve, implementação
+rápida (2–4 semanas), templates de comunicação, aulas
+curtas (10–15 min), checklists para líderes, e dashboard
+simples com métricas de adesão e evolução por squad.
+Output:
+3 frases fortes de ICP (no formato pedido)
+1. Eu ajudo gestores de T&D/RH em empresas de 200–800 colaboradores que estão
+com onboarding e treinamento inconsistentes, e querem padronizar performance e
+reduzir retrabalho em 60–90 dias, dando-lhes trilhas prontas com personalização
+leve e métricas simples de evolução.
+2. Eu ajudo coordenadores de capacitação corporativa que estão com LMS
+subutilizado e baixa adesão aos cursos, e querem engajar líderes e times sem “virar
+evento”, dando-lhes microaulas, checklists de liderança e playbooks de
+implementação em 2–4 semanas.
+3. Eu ajudo RH de empresas de serviços em crescimento que está sofrendo com
+rotatividade e queda de qualidade no atendimento, e quer provar ROI para liberar
+orçamento, dando-lhe um sistema de treinamento aplicável no dia a dia com
+dashboard de indicadores.
+5 maiores pontos de dor (resumo + 1 frase)
+● Onboarding “cada um do seu jeito”
+Isso cria variação de qualidade, aumenta erros e torna o resultado dependente de
+quem treinou.
+● Pressão por resultado rápido sem time/tempo
+A cobrança por impacto em 60–90 dias vem antes de existir capacidade interna
+para desenhar e operar uma trilha decente.
+● Treinamento vira evento e morre na semana seguinte
+Sem rotina, reforço e acompanhamento, o time até assiste, mas não muda
+comportamento.
+● Baixa adesão e engajamento (especialmente dos líderes)
+Quando o líder não compra a ideia, o time sente que “não é prioridade” e a
+execução desanda.
+
+● Dificuldade de medir ROI e defender orçamento
+Sem um jeito simples de conectar treinamento a indicadores (qualidade, tempo,
+conversão), a iniciativa vira “custo” e perde verba.
+

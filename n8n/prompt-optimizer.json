@@ -1,0 +1,99 @@
+{
+    "name": "Prompt Optimizer",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "prompt-optimizer",
+                "responseMode": "responseNode",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 2,
+            "position": [
+                0,
+                0
+            ],
+            "id": "webhook-trigger",
+            "name": "Webhook"
+        },
+        {
+            "parameters": {
+                "modelId": {
+                    "__rl": true,
+                    "mode": "list",
+                    "value": "gpt-4o"
+                },
+                "messages": {
+                    "values": [
+                        {
+                            "role": "system",
+                            "content": "Você é um Analista Estratégico de Elite e Extrator de Premissas. Sua única função é receber o texto bruto de um usuário (de qualquer nicho ou indústria) e traduzi-lo em um bloco de contexto denso, lógico e implacável. Este bloco alimentará uma IA analítica subsequente.\n\nSua análise deve funcionar perfeitamente com ou sem dados numéricos. Se não houver matemática, foque em tempo, energia, risco e lógica operacional.\n\nSeu Algoritmo de Execução:\n\n1. Extração de Fatos Reais: Isole estritamente o que é fato consumado e o que é o objetivo final. Ignore desabafos emocionais.\n2. Desdobramento de Fricção (A Realidade):\n   - Se houver números: Calcule o impacto financeiro/operacional real.\n   - Se NÃO houver números: Mapeie o custo imediato de tempo, energia e curva de aprendizado que a ação exige.\n3. Mapeamento de Premissas Ocultas (Crítico): Identifique o que o usuário está assumindo como garantido, mas que não tem validação prática (ex: assumir que a demanda existe, assumir que a equipe consegue executar, assumir que o mercado vai aceitar a mudança).\n4. Implicações de 2ª Ordem: O que acontece logo após a ação inicial? Descreva 2 consequências inevitáveis da decisão, focando no risco não mitigado.\n\nRegras de Saída (Inquebráveis):\n- ZERO interação com o usuário. Não faça perguntas. Não crie lacunas [ ].\n- Nunca escreva \"Não aplicável\" ou \"Dados insuficientes\". Adapte a análise para o nível qualitativo da entrada.\n- Entregue ÚNICA E EXCLUSIVAMENTE o texto formatado em Markdown, pronto para ser lido por outra máquina. Sem introduções.\n\nEstrutura de Saída Obrigatória:\n### Fatos Isolados\n- [Fato 1]\n- [Fato 2]\n### Desdobramento de Fricção\n- [Impacto calculado ou impacto de tempo/esforço]\n### Premissas Ocultas (Onde mora o risco)\n- [Premissa 1]\n- [Premissa 2]\n### Implicações de 2ª Ordem\n- [Implicação 1]\n- [Implicação 2]"
+                        },
+                        {
+                            "role": "user",
+                            "content": "={{ $json.body.userPrompt }}"
+                        }
+                    ]
+                },
+                "options": {
+                    "maxTokens": 4096,
+                    "temperature": 0.4
+                }
+            },
+            "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+            "typeVersion": 1.2,
+            "position": [
+                300,
+                0
+            ],
+            "id": "openai-model",
+            "name": "OpenAI Chat Model",
+            "credentials": {
+                "openAiApi": {
+                    "id": "OPENAI_CREDENTIAL_ID",
+                    "name": "OpenAI API"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "respondWith": "json",
+                "responseBody": "={{ JSON.stringify({ success: true, text: typeof $json.message === 'string' ? $json.message : ($json.message?.content || $json.text || $json.output?.[0]?.content?.[0]?.text || JSON.stringify($json)) }) }}",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1.1,
+            "position": [
+                600,
+                0
+            ],
+            "id": "respond-webhook",
+            "name": "Respond to Webhook"
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "OpenAI Chat Model",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "OpenAI Chat Model": {
+            "main": [
+                [
+                    {
+                        "node": "Respond to Webhook",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

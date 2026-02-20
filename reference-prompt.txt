@@ -1,0 +1,94 @@
+=== TITLE ===
+Narrativa de Caso de Uso
+
+=== CONTENT_TEMPLATE ===
+Preciso transformar um caso de automação em conteúdo educativo.
+PROJETO: [Descreva o que você automatizou e o resultado]
+PÚBLICO-ALVO: [Donos de negócio que não sabem que precisam de automação / Profissionais que
+querem aprender n8n / Outros nichos específicos]
+Crie uma narrativa que:
+1. Comece com o problema real e palpável (não "automação é importante")
+2. Mostre o "antes" de forma tangível (tempo perdido, erros, frustração)
+3. Explique a solução sem jargão técnico desnecessário
+4. Quantifique o resultado (horas economizadas, erro reduzido, X% de melhoria)
+5. Termine com um insight não-óbvio (algo que você aprendeu construindo)
+Formato: [post LinkedIn / thread Twitter / case study completo]
+Evite: "transformação digital", "otimização de processos", "revolucionário". Use linguagem direta e
+específica.
+
+=== USAGE_INSTRUCTIONS ===
+● Pós-projeto (transformar em case study)
+● Criar conteúdo para LinkedIn/blog
+● Demonstrar capacidade para prospects
+● Educar mercado sobre valor de automação
+● Gerar inbound (conteúdo que atrai clientes)
+
+=== EXAMPLE_OUTPUT ===
+## Input
+Eu implementei para um cliente de RH uma automação simples: “Triagem de
+solicitações do RH” (formulário + planilha + regras + e-mails). Antes tudo entrava por
+WhatsApp e e-mail sem prioridade. Depois, criamos categorias e SLAs e
+automatizamos encaminhamento. Quero transformar isso em conteúdo educativo.
+
+## Output
+Preciso transformar um projeto de triagem e automação de solicitações do RH em
+conteúdo educativo.
+PROJETO/INICIATIVA: criei um fluxo onde solicitações entram por formulário, caem
+em planilha com categoria, SLA e responsável, e disparam e-mails automáticos.
+Resultado: menos interrupção e mais previsibilidade.
+CONTEXTO: média empresa (≈200 pessoas), RH enxuto, urgência diária, tudo
+chegava por WhatsApp/e-mail, ninguém sabia o que era prioridade.
+PÚBLICO-ALVO: gestores e RHs de médias empresas que ainda não perceberam
+que o “caos de solicitações” é uma causa raiz de atraso e burnout.
+FORMATO: post LinkedIn
+TOM: direto, específico, exemplos concretos.
+EVITE: buzzwords proibidos.
+Narrativa (post LinkedIn)
+O RH do cliente tinha um problema simples e caro: ninguém sabia o que era
+prioridade.
+Tudo chegava por WhatsApp, e-mail e “rapidinho aqui”.
+Antes, o dia começava assim:
+○ 30+ mensagens pingando de gestores.
+○ Pedido de documento urgente misturado com dúvida boba.
+○ A mesma pergunta repetida 10 vezes.
+○ Uma urgência real aparecia tarde demais.
+● O efeito era bem concreto:
+○ retrabalho
+○ gente irritada (“RH não responde”)
+○ RH em modo defesa
+○ tarefas importantes sempre empurradas
+● O que eu mudei (sem complicar):
+○ Parei de “aceitar qualquer canal”.
+○ Criei 3 categorias de solicitação com SLA claro: urgente legal, operacional,
+dúvida.
+○ Padronizei a entrada num formulário simples (1 minuto).
+○ Automatizei o encaminhamento e o “recibo” com prazo.
+
+● Durante, teve dois momentos que mudaram o plano:
+○ O cliente achou que WhatsApp era inevitável. Na prática, o que era inevitável
+era a ansiedade, não o WhatsApp. Quando o gestor recebeu confirmação +
+prazo, ele parou de insistir.
+○ A primeira versão tinha categorias demais. Ninguém usava. Eu cortei para 3
+e pronto.
+● Resultado (em 3 semanas):
+○ tempo médio de resposta caiu de “depende do humor do dia” para SLA
+visível
+○ o RH recuperou blocos de foco (menos interrupção)
+○ queda clara de “cobrança repetida” porque todo pedido tinha protocolo e
+prazo
+○ gestores passaram a reclamar menos de “sumiu”, e mais de “vamos ajustar o
+SLA” (um problema melhor)
+● Insight não óbvio:
+o maior ganho não foi tecnologia — foi tirar ambiguidade.
+Quando você dá um caminho único + prazo explícito, você reduz atrito social. E o
+RH para de ser “o gargalo invisível”.
+Próximo passo prático:
+Pegue as últimas 50 solicitações do RH e escreva: quais 10 são repetidas?
+Se você não consegue responder isso em 30 minutos, você já está no caos — só
+não está medindo.
+
+=== DESCRIPTION_SHORT ===
+Conte automação como história com problema, jornada e resultado. Eduque vendendo, venda educando.
+
+=== DESCRIPTION_FULL ===
+Transformar caso de automação/implementação técnica em conteúdo educativo que gera autoridade, atrai leads e demonstra expertise sem "vender diretamente".

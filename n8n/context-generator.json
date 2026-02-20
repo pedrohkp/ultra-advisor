@@ -1,0 +1,73 @@
+{
+    "name": "Context Generator Pattern",
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "context-generator",
+                "responseMode": "responseNode",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 2,
+            "position": [
+                0,
+                0
+            ],
+            "id": "webhook-trigger",
+            "name": "Webhook"
+        },
+        {
+            "parameters": {
+                "jsCode": "const json = $input.all()[0].json;\nconst payload = json.data || json.body || json;\n\nconsole.log(\"Payload received:\", payload);\n\n// Generic Payload Extraction\nlet contextItems = null;\n\n// Try to find contextItems in various locations\nif (payload.contextItems) contextItems = payload.contextItems;\nelse if (payload.data && payload.data.contextItems) contextItems = payload.data.contextItems;\nelse if (json.contextItems) contextItems = json.contextItems;\n\nif (!contextItems || !Array.isArray(contextItems)) {\n  throw new Error(\"Missing or invalid 'contextItems' array in payload. Ensure frontend sends { contextItems: [{label, value}, ...] }\");\n}\n\n// Build the prompt dynamically from the items\nlet contextContextString = \"\";\n\ncontextItems.forEach(item => {\n   if (item.value && item.value.trim() !== \"\") {\n       contextContextString += `- ${item.label}: ${item.value}\\n`;\n   }\n});\n\n// Construct the Prompt Engineering System Message\nconst systemPrompt = `\nATUE COMO UM CONSULTOR DE NEG\u00d3CIOS E ESTRATEGISTA S\u00caNIOR.\nSua miss\u00e3o \u00e9 criar um \"Manual da Empresa\" (Business Context) fiel ao que for recebido, sem inventar ou acrescentar contexto, para ser usado como base de conhecimento por outras IAs.\n\nCom base nos dados fornecidos abaixo:\n\n${contextContextString}\n\nSA\u00cdDA ESPERADA:\nEscreva um RELAT\u00d3RIO ESTRUTURADO (obrigat\u00f3rio em t\u00f3picos) que descreva a empresa.\nA estrutura deve ser:\n\n# MANUAL DE CONTEXTO ESTRAT\u00c9GICO: [NOME DA EMPRESA/SETOR]\n\n## 1. Vis\u00e3o Geral & Posicionamento\n(Descreva aqui quem somos e o que fazemos)\n\n## 2. Nossos Objetivos\n(Detalhamento das metas informadas)\n\n## 3. Nosso Cliente (ICP)\n(An\u00e1lise de nossos clientes e suas dores)\n\n## 4. Cultura & Diferenciais\n(Contraste com os v\u00edcios de mercado citados)\n\n## 5. Diretrizes de Comunica\u00e7\u00e3o\n(Baseado no tom informado)\n\nIMPORTANTE:\n- N\u00c5O use texto corrido longo sem subt\u00edtulos.\n- USE listas (bullets) sempre que poss\u00edvel para facilitar a leitura por IAs.\n- Mantenha um tom profissional e direto.`\n\nreturn { json: { prompt: systemPrompt } };"
+            },
+            "type": "n8n-nodes-base.code",
+            "typeVersion": 2,
+            "position": [
+                250,
+                0
+            ],
+            "id": "format-prompt",
+            "name": "Format Prompt Logic"
+        },
+        {
+            "parameters": {
+                "respondWith": "json",
+                "responseBody": "={{ JSON.stringify({ status: \"success\", message: \"Context formatted successfully\", generatedPrompt: $json.prompt || $json.text || $json.content || $json.message?.content || $json.output?.[0]?.content?.[0]?.text }) }}",
+                "options": {}
+            },
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1.1,
+            "position": [
+                550,
+                0
+            ],
+            "id": "respond-webhook",
+            "name": "Respond to Webhook"
+        }
+    ],
+    "connections": {
+        "Webhook": {
+            "main": [
+                [
+                    {
+                        "node": "Format Prompt Logic",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Format Prompt Logic": {
+            "main": [
+                [
+                    {
+                        "node": "Respond to Webhook",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    }
+}

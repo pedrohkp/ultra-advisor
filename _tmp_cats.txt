@@ -1,0 +1,31 @@
+1. Relatório de Inteligência de Mercado | Análise de Mercado | Todos
+2. Roteiro de Entrevista Comportamental | Análise de Mercado | SaaS, Startups, Consultoria
+3. Análise de Canais de Go-to-Market | Estratégia & Posicionamento | SaaS, E-commerce, Startups
+4. Dimensionamento de Mercado (TAM/SAM/SOM) | Análise de Mercado | SaaS, Startups
+5. Personas Comportamentais | Análise de Mercado | Todos
+6. Análise de Posicionamento Competitivo | Estratégia & Posicionamento | Todos
+7. Precificação Baseada em Reverse-Engineering | Estratégia & Posicionamento | SaaS, E-commerce, Infoprodutos
+8. Metodologia de Pesquisa Comportamental | Análise de Mercado | SaaS, Consultoria, Startups
+9. Análise SWOT Estratégica | Validação & Decisão | Todos
+10. Estudo de Viabilidade de Entrada em Mercado | Validação & Decisão | SaaS, E-commerce, Startups
+11. Gerador de Posicionamento de Marca | Estratégia & Posicionamento | Todos
+12. Catálogo de Erros de Iniciantes | Pensamento Crítico | Startups, Infoprodutos
+13. Second-Order Thinking — Análise de Consequências em Cascata | Pensamento Crítico | Todos
+14. Argumento Mais Forte da Posição Oposta | Pensamento Crítico | Todos
+15. Antecipação de Tendências Emergentes | Análise de Mercado | Todos
+16. Validação de Demanda Pré-Construção | Validação & Decisão | SaaS, Startups, Infoprodutos
+17. Decomposição Recursiva de Problemas | Execução & Operação | Todos
+18. Arbitragem de Conhecimento entre Setores | Pensamento Crítico | Consultoria, SaaS, Startups
+19. Janela de Oportunidade Estratégica | Validação & Decisão | SaaS, E-commerce, Startups
+20. Contra-Posicionamento Estratégico | Estratégia & Posicionamento | SaaS, E-commerce, Startups
+21. Exposição de Vieses Cognitivos | Pensamento Crítico | Todos
+22. Alavancagem Máxima de Recursos | Execução & Operação | PMEs, Startups
+23. Feedback Específico — Parte Fraca, Parte Forte e Pontos Cegos | Comunicação & Conteúdo | Todos
+24. Próximo Passo Físico | Execução & Operação | Todos
+25. Arquitetura de Soluções | Execução & Operação | SaaS, Consultoria
+26. Narrativa de Caso de Uso | Comunicação & Conteúdo | Consultoria, Infoprodutos
+27. Efeito Volante — Crescimento Composto | Crescimento & Aprendizado | SaaS, E-commerce, Infoprodutos
+28. Entendimento Estrutural de Sistemas | Pensamento Crítico | Todos
+29. Meta-Learning — Protocolo de Aprendizado Acelerado | Crescimento & Aprendizado | Todos
+30. Pré-Mortem — Mapeamento de Falhas e Prevenção | Validação & Decisão | Todos
+31. Definição de Público-Alvo Ideal (ICP) | Estratégia & Posicionamento | Todos

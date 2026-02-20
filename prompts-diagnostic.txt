@@ -1,0 +1,31 @@
+1. T:OK(825) | E:OK(5157) | U:OK(193) | Trend Report — Relatório de Inteligência de Mercado
+2. T:OK(669) | E:OK(2878) | U:OK(210) | Customer Interview Question Generator — Roteiro de Entrevista Comportamental
+3. T:OK(675) | E:OK(4613) | U:OK(159) | Go-to-Market Channel Analysis — Estratégia de Canais de Aquisição
+4. T:OK(488) | E:OK(1981) | U:OK(142) | Market Sizing (TAM/SAM/SOM) — Dimensionamento de Mercado
+5. T:OK(723) | E:OK(1970) | U:OK(169) | Customer Persona Builder (Based on Real Data) — Personas Comportamentais
+6. T:OK(535) | E:OK(1492) | U:OK(170) | Competitor Positioning Map — Análise de Posicionamento Competitivo
+7. T:OK(686) | E:OK(4690) | U:OK(219) | Pricing Strategy Reverse-Engineering — Estratégia de Precificação Baseada em Dados
+8. T:OK(762) | E:OK(5092) | U:OK(172) | Survey Design That Doesn't Suck — Metodologia de Pesquisa Comportamental
+9. T:OK(822) | E:OK(3333) | U:OK(150) | SWOT Analysis That Actually Drives Decisions — Análise SWOT Estratégica
+10. T:OK(878) | E:OK(3157) | U:OK(169) | Market Entry Feasibility Study — Estudo de Viabilidade de Entrada em Mercado
+11. T:OK(797) | E:OK(2801) | U:OK(167) | Brand Positioning Statement Generator — Gerador de Posicionamento de Marca
+12. T:OK(320) | E:OK(7923) | U:OK(245) | Catálogo de Erros de Iniciantes — Aprendizado por Erro Antecipado
+13. T:OK(915) | E:OK(3436) | U:OK(265) | Second-Order Thinking — Análise de Consequências em Cascata
+14. T:OK(825) | E:OK(2967) | U:OK(241) | Steelmanning — Argumento Mais Forte da Posição Oposta
+15. T:OK(787) | E:OK(3118) | U:OK(218) | Sinais Fracos — Antecipação de Tendências Emergentes
+16. T:OK(1040) | E:MISS(0) | U:OK(207) | Demand Validation Before Building — Validação de Demanda Lean
+17. T:OK(718) | E:MISS(0) | U:OK(193) | Decomposição Recursiva — Resolução de Problemas Complexos
+18. T:OK(769) | E:MISS(0) | U:OK(244) | Arbitragem de Conhecimento — Vantagem Assimétrica por Cross-Pollination
+19. T:OK(1009) | E:MISS(0) | U:OK(167) | Janela de Oportunidade — Framework de Timing Estratégico
+20. T:OK(871) | E:MISS(0) | U:OK(240) | Contra-Posicionamento — Estratégia de Diferenciação Radical
+21. T:OK(1036) | E:MISS(0) | U:OK(223) | Exposição de Vieses — Blind Spots Cognitivos
+22. T:OK(999) | E:MISS(0) | U:OK(205) | Alavancagem Máxima — Pensamento Exponencial de Recursos
+23. T:MISS(0) | E:MISS(0) | U:MISS(0) | Prompt de Feedback Específico — Parte Fraca, Parte Forte, Clareza e Blind Spots
+24. T:OK(961) | E:MISS(0) | U:OK(203) | Próximo Passo Físico — Execução Sem Procrastinação
+25. T:OK(850) | E:MISS(0) | U:OK(301) | Arquitetura de Soluções — Planejamento de Implementação Técnica
+26. T:OK(813) | E:MISS(0) | U:OK(204) | Storytelling Técnico — Narrativa de Caso de Uso
+27. T:OK(964) | E:MISS(0) | U:OK(225) | Efeito Volante — Criação de Momentum Composto
+28. T:MISS(0) | E:MISS(0) | U:MISS(0) | Prompt de Entendimento Estrutural — Diagrama de Loops Causais, Delays e Alavancas
+29. T:OK(1320) | E:MISS(0) | U:OK(215) | Meta-Learning — Protocolo de Aprendizado Acelerado
+30. T:MISS(0) | E:MISS(0) | U:MISS(0) | Prompt de Pré-Mortem — Falhas Técnicas, de Planejamento, Humanas e Externas (com Sinais e Prevenção)
+31. T:MISS(0) | E:MISS(0) | U:MISS(0) | ICP WWWH — Definição de Público-Alvo Ideal

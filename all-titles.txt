@@ -1,0 +1,31 @@
+1. Relatório de Inteligência de Mercado
+2. Roteiro de Entrevista Comportamental
+3. Análise de Canais de Go-to-Market
+4. Dimensionamento de Mercado (TAM/SAM/SOM)
+5. Personas Comportamentais
+6. Análise de Posicionamento Competitivo
+7. Precificação Baseada em Reverse-Engineering
+8. Metodologia de Pesquisa Comportamental
+9. Análise SWOT Estratégica
+10. Estudo de Viabilidade de Entrada em Mercado
+11. Gerador de Posicionamento de Marca
+12. Catálogo de Erros de Iniciantes
+13. Second-Order Thinking — Análise de Consequências em Cascata
+14. Argumento Mais Forte da Posição Oposta
+15. Antecipação de Tendências Emergentes
+16. Validação de Demanda Pré-Construção
+17. Decomposição Recursiva de Problemas
+18. Arbitragem de Conhecimento entre Setores
+19. Janela de Oportunidade Estratégica
+20. Contra-Posicionamento Estratégico
+21. Exposição de Vieses Cognitivos
+22. Alavancagem Máxima de Recursos
+23. Feedback Específico — Parte Fraca, Parte Forte e Pontos Cegos
+24. Próximo Passo Físico
+25. Arquitetura de Soluções
+26. Narrativa de Caso de Uso
+27. Efeito Volante — Crescimento Composto
+28. Entendimento Estrutural de Sistemas
+29. Meta-Learning — Protocolo de Aprendizado Acelerado
+30. Pré-Mortem — Mapeamento de Falhas e Prevenção
+31. Definição de Público-Alvo Ideal (ICP)

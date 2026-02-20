@@ -1,0 +1,16 @@
+Checking prompts table...
+Found 2 prompts.
+[
+  {
+    "id": 1,
+    "slug": "swot-estrategica-2",
+    "title": "Análise SWOT Estratégica 2.0",
+    "is_premium": false
+  },
+  {
+    "id": 2,
+    "slug": "buyer-persona-pro",
+    "title": "Definição de Buyer Persona",
+    "is_premium": true
+  }
+]

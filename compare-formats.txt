@@ -1,0 +1,130 @@
+=== PROMPT 1: Relatório de Inteligência de Mercado ===
+--- TEMPLATE (first 500 chars) ---
+Você é um analista sênior em uma consultoria de alto nível preparando um briefing de inteligência
+trimestral
+Crie um relatório abrangente de inteligência de mercado para [SETOR] cobrindo:
+1. Top 5 tendências reformulando o setor agora (com evidências, não vibes)
+2. 3 ameaças emergentes que a maioria das empresas ainda não está rastreando
+3. O que os jogadores mais inteligentes estão fazendo de diferente (cite nomes)
+4. Para onde o capital está fluindo (rodadas de investimento recentes, atividade
+--- EXAMPLE (first 500 chars) ---
+## Input
+Uma marca DTC de moda feminina (fast-to-mid) sente queda de conversão no
+mobile e aumento de devoluções. A CEO pediu um briefing trimestral para decidir: 1)
+se entra forte em marketplaces, 2) se investe em IA para personalização/size & fit, 3)
+se reposiciona para qualidade/durabilidade versus “tendência barata”.
+
+## Output
+- Resumo executivo (3 frases no máximo)
+1. O setor está migrando de “aquisição paga” para eficiência de margem via retenção,
+recompras e redução de devoluções. 2) Que
+
+=== PROMPT 5: Personas Comportamentais ===
+--- TEMPLATE (first 500 chars) ---
+<role>Você é um pesquisador de insights de consumidor no Goldman Sachs</role>
+<task>Construa 3 personas detalhadas de clientes para [SEU PRODUTO] em [SETOR]
+Para cada persona:
+- Demografia + psicografia (o que eles leem, seguem, confiam?)
+- Gatilho de compra: Qual evento faz eles buscarem no Google sua solução?
+- Processo de decisão: Quem mais influencia a compra deles?
+- Objeções: Qual é a razão #1 deles para dizer não?
+- Frases exatas que usariam para descrever o problema deles (para copy de a
+--- EXAMPLE (first 500 chars) ---
+## Input
+Estou lançando uma linha de moda feminina “workwear” (trabalho) com caimento
+garantido e quero 3 personas comportamentais para orientar: criativos, canais e
+oferta.
+
+## Output
+Persona 1 — “A Pragmática do Closet Enxuto”
+● Demografia + psicografia: segue creators de organização/estilo minimalista; confia
+em reviews detalhados e “custo por uso”; lê newsletters simples, evita hype.
+● Gatilho de compra: “volta ao presencial / promoção / reunião importante” → busca
+“calça alfaiataria que não
+
+=== PROMPT 11: Gerador de Posicionamento de Marca ===
+--- TEMPLATE (first 500 chars) ---
+Você é um estrategista de marca que construiu posicionamento para 3 marcas bilionárias.
+Meu produto: [PRODUTO]
+Cliente alvo: [QUEM — seja específico]
+Concorrentes: [TOP 3]
+Nossa vantagem injusta: [O QUE NOS FAZ DIFERENTES]
+Crie 3 opções de declaração de posicionamento usando este framework:
+Para [cliente alvo] que [necessidade/dor], [produto] é o [categoria] que [benefício chave] diferente
+de [concorrentes] porque [razão para acreditar].
+Para cada opção:
+- Avalie em: clareza (1-10), diferenciaçã
+--- EXAMPLE (first 500 chars) ---
+## Input
+A agência “Órbita B2B Performance” está reposicionando o site porque está
+atraindo lead ruim (“quero 50 leads baratos”) e perdendo para concorrentes com
+narrativa mais forte. Eles querem um posicionamento que deixe claro: eles não
+vendem tráfego; vendem pipeline com governança e integração marketing-vendas.
+Meu produto: Serviço de marketing digital B2B (performance + ABM + analytics +
+integração CRM)
+Cliente alvo: Head/Gerente de Marketing de SaaS B2B com ticket médio R$ 15k+,
+time de m
+
+=== PROMPT 16: Validação de Demanda Pré-Construção ===
+--- TEMPLATE (first 500 chars) ---
+Você é um consultor de lean startup que validou 100+ ideias de produto.
+Minha ideia: [DESCREVA SUA IDEIA DE PRODUTO]
+Cliente alvo: [QUEM]
+Ponto de preço que estou considerando: [PREÇO]
+Execute um framework de validação de demanda pré-construção:
+1. VALIDAÇÃO DE PROBLEMA: Esse é um problema real? Pontue o nível de dor (vitamina vs
+analgésico vs cirurgia). Que evidência existe de que pessoas buscam ativamente soluções?
+2. VALIDAÇÃO DE SOLUÇÃO: Por que alguém escolheria isso em vez do workaround at
+--- EXAMPLE (first 500 chars) ---
+## Input
+Minha ideia: “Cobrança Inteligente + Previsão de Caixa” dentro de um SaaS B2B de
+gestão financeira: o sistema identifica clientes com risco de atraso, sugere ações
+(WhatsApp/email), e projeta fluxo de caixa 30/60/90 dias com base em histórico de
+pagamentos e pipeline.
+Cliente alvo: PMEs de serviços (agências, consultorias, escritórios) com 5–50
+pessoas, que faturam R$ 100k–R$ 2M/mês e sofrem com inadimplência e
+descontrole de caixa.
+Ponto de preço que estou considerando: R$ 499/mês.
+
+##
+
+=== PROMPT 23: Feedback Específico — Parte Fraca, Parte Forte e Pontos Cegos ===
+--- TEMPLATE (first 500 chars) ---
+Preciso de feedback sobre: [descreva o trabalho/ideia/projeto].
+Contexto: [para quem é, qual problema resolve, em que estágio está].
+Não me dê feedback genérico tipo 'está bom' ou 'precisa melhorar'. Responda especificamente:
+PARTE MAIS FRACA: → Qual é o componente/seção/ideia mais fraco disso e por quê → O que
+especificamente não funciona (seja brutal) → Como você melhoraria essa parte (ação concreta, não
+princípio vago)
+PARTE MAIS FORTE: → O que você manteria exatamente como está → Por que iss
+--- EXAMPLE (first 500 chars) ---
+## Input
+Estou criando uma oferta de consultoria chamada “Diagnóstico de RH em 10 dias”
+para médias empresas (100–300 pessoas). Já tenho uma landing page e um roteiro
+de call. A promessa atual é: “organizar processos de RH e reduzir turnover”. Estou
+em estágio de rascunho e preciso ajustar antes de começar prospecção.
+
+## Output
+Preciso de feedback sobre: oferta “Diagnóstico de RH em 10 dias” (landing + roteiro
+de call).
+Contexto: para médias empresas (100–300), RH enxuto, resolve caos operacion
+
+=== PROMPT 29: Meta-Learning — Protocolo de Aprendizado Acelerado ===
+--- TEMPLATE (first 500 chars) ---
+Preciso dominar: [habilidade/conhecimento] no menor tempo possível.
+Desenhe meu protocolo de aprendizado acelerado:
+DECOMPOSIÇÃO ESTRATÉGICA: → Quais são os 20% de sub-habilidades que geram 80% dos
+resultados → Qual é a sequência de aprendizado (o que precisa vir antes do quê) → O que posso
+ignorar completamente sem prejuízo real
+FEEDBACK LOOPS RÁPIDOS: → Como criar situações onde eu erro e corrijo em minutos, não
+semanas → Que projetos micro eu faço que testam compreensão imediatamente → Quem p
+--- EXAMPLE (first 500 chars) ---
+## Input
+O fundador de uma escola de educação corporativa decidiu que precisa dominar
+design instrucional para cursos corporativos orientados a resultado (não “conteúdo”),
+para reduzir evasão e aumentar aplicação prática. Já tem gravação de aulas, mas
+não sabe desenhar: projetos, feedback rápido, rubricas, medição de impacto e
+“mínimo viável de resultado”. Quer um protocolo de 30 dias, com validação objetiva.
+
+## Output
+Preciso dominar: design instrucional para cursos corporativos online orienta

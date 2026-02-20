@@ -1,0 +1,31 @@
+1. [OK] T:825 E:5125 U:193 D:142 F:173 [PREMIUM] | Relatório de Inteligência de Mercado
+2. [OK] T:669 E:2860 U:210 D:107 F:214 | Roteiro de Entrevista Comportamental
+3. [OK] T:675 E:4577 U:159 D:114 F:168 [PREMIUM] | Análise de Canais de Go-to-Market
+4. [OK] T:488 E:1953 U:142 D:127 F:169 | Dimensionamento de Mercado (TAM/SAM/SOM)
+5. [OK] T:723 E:1970 U:169 D:123 F:177 | Personas Comportamentais
+6. [OK] T:535 E:1492 U:170 D:107 F:153 | Análise de Posicionamento Competitivo
+7. [OK] T:686 E:4690 U:219 D:118 F:176 | Precificação Baseada em Reverse-Engineering
+8. [OK] T:762 E:5092 U:172 D:126 F:188 | Metodologia de Pesquisa Comportamental
+9. [OK] T:822 E:3333 U:150 D:110 F:121 [PREMIUM] | Análise SWOT Estratégica
+10. [OK] T:878 E:3151 U:169 D:103 F:161 | Estudo de Viabilidade de Entrada em Mercado
+11. [OK] T:797 E:2801 U:167 D:126 F:211 | Gerador de Posicionamento de Marca
+12. [OK] T:317 E:7915 U:242 D:106 F:168 | Catálogo de Erros de Iniciantes
+13. [OK] T:915 E:3436 U:265 D:114 F:205 | Second-Order Thinking — Análise de Consequências em Cascata
+14. [OK] T:825 E:2967 U:241 D:98 F:216 | Argumento Mais Forte da Posição Oposta
+15. [OK] T:787 E:3118 U:218 D:113 F:171 | Antecipação de Tendências Emergentes
+16. [OK] T:1040 E:3335 U:207 D:119 F:165 | Validação de Demanda Pré-Construção
+17. [OK] T:718 E:3789 U:193 D:104 F:159 | Decomposição Recursiva de Problemas
+18. [OK] T:769 E:3775 U:244 D:124 F:150 | Arbitragem de Conhecimento entre Setores
+19. [OK] T:1009 E:2840 U:167 D:107 F:152 | Janela de Oportunidade Estratégica
+20. [OK] T:871 E:2114 U:240 D:109 F:161 | Contra-Posicionamento Estratégico
+21. [OK] T:1036 E:2769 U:223 D:108 F:173 | Exposição de Vieses Cognitivos
+22. [OK] T:999 E:2556 U:205 D:89 F:160 [PREMIUM] | Alavancagem Máxima de Recursos
+23. [OK] T:847 E:2587 U:266 D:111 F:246 | Feedback Específico — Parte Fraca, Parte Forte e Pontos Cegos
+24. [OK] T:961 E:3899 U:203 D:97 F:117 | Próximo Passo Físico
+25. [OK] T:850 E:2735 U:301 D:111 F:153 | Arquitetura de Soluções
+26. [OK] T:813 E:2839 U:204 D:97 F:154 | Narrativa de Caso de Uso
+27. [OK] T:964 E:3810 U:225 D:105 F:155 [PREMIUM] | Efeito Volante — Crescimento Composto
+28. [OK] T:1138 E:4387 U:250 D:125 F:227 [PREMIUM] | Entendimento Estrutural de Sistemas
+29. [OK] T:1317 E:4478 U:212 D:120 F:191 [PREMIUM] | Meta-Learning — Protocolo de Aprendizado Acelerado
+30. [OK] T:800 E:6081 U:314 D:127 F:269 | Pré-Mortem — Mapeamento de Falhas e Prevenção
+31. [OK] T:1365 E:2717 U:301 D:171 F:260 | Definição de Público-Alvo Ideal (ICP)

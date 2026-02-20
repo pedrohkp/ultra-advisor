@@ -1,0 +1,90 @@
+import { Card } from "@/components/ui/card"
+import { CheckCircle2, Zap, Database, Layers } from "lucide-react"
+
+const benefits = [
+    {
+        icon: Zap,
+        title: "Prompts testados em campo",
+        description: "Cada framework foi validado em situações reais de consultoria estratégica."
+    },
+    {
+        icon: Database,
+        title: "Contexto da sua empresa integrado",
+        description: "O Context Builder garante que a IA entenda seu negócio antes de responder."
+    },
+    {
+        icon: Layers,
+        title: "Comandos prontos para copiar e colar",
+        description: "Sem engenharia de prompt complexa. É só preencher e rodar."
+    }
+]
+
+export function SectionSolution() {
+    return (
+        <section className="py-24 relative overflow-hidden">
+            {/* Background Decorative Element */}
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-blue-900/20 blur-[100px] rounded-full opacity-40 pointer-events-none" />
+
+            <div className="container mx-auto px-4 md:px-6 relative z-10">
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+                    <div>
+                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-medium mb-6">
+                            <CheckCircle2 className="w-4 h-4" />
+                            <span>A solução definitiva</span>
+                        </div>
+
+                        <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                            A biblioteca de frameworks que transforma IA em <span className="text-gradient">consultor estratégico</span>
+                        </h2>
+
+                        <p className="text-gray-400 text-lg mb-8 leading-relaxed">
+                            O ULTRA ADVISOR não é apenas um &quot;pack de prompts&quot;. É um sistema completo com 35+ frameworks estruturados, Context Builder e Agentes Otimizadores.
+                        </p>
+
+                        <div className="space-y-6">
+                            {benefits.map((item, index) => (
+                                <div key={index} className="flex gap-4">
+                                    <div className="w-12 h-12 rounded-lg bg-[#0F1F3D] border border-white/5 flex items-center justify-center shrink-0">
+                                        <item.icon className="w-6 h-6 text-orange-500" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-semibold text-white mb-1">{item.title}</h3>
+                                        <p className="text-gray-400 text-sm">{item.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="relative">
+                        <Card className="w-full h-[500px] bg-[#0A1628]/80 border-blue-500/20 glow-blue overflow-hidden relative">
+                            {/* Visual Placeholder for Product Interface */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent p-8 flex flex-col items-center justify-center text-center">
+                                <Database className="w-20 h-20 text-blue-500/20 mb-4" />
+                                <p className="text-blue-500/40 text-sm uppercase tracking-widest font-mono">Interface do Sistema</p>
+                                <div className="mt-8 w-full max-w-sm space-y-4 opacity-50">
+                                    <div className="h-4 bg-blue-500/10 rounded w-3/4 mx-auto" />
+                                    <div className="h-4 bg-blue-500/10 rounded w-full" />
+                                    <div className="h-4 bg-blue-500/10 rounded w-5/6 mx-auto" />
+                                </div>
+                            </div>
+                        </Card>
+
+                        {/* Floating Badge */}
+                        <div className="absolute -bottom-6 -left-6 bg-[#0F1F3D] border border-orange-500/20 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow">
+                            <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center">
+                                <Zap className="w-5 h-5 text-orange-500" />
+                            </div>
+                            <div>
+                                <p className="text-xs text-gray-400">Tempo economizado</p>
+                                <p className="font-bold text-white">120+ horas/mês</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    )
+}
