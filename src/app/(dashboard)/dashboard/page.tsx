@@ -6,6 +6,7 @@ import {
     History
 } from "lucide-react";
 import { HowItWorks } from "@/components/dashboard/HowItWorks";
+import { OnboardingTour } from "@/components/dashboard/OnboardingTour";
 import "./dashboard.css";
 
 export default async function DashboardPage() {
@@ -38,6 +39,7 @@ export default async function DashboardPage() {
 
     return (
         <div>
+            <OnboardingTour />
             {/* Welcome Header */}
             <header className="dashboard-welcome">
                 <h1>
@@ -51,28 +53,35 @@ export default async function DashboardPage() {
 
             {/* Cards Grid */}
             <div className="dashboard-cards">
-                {cards.map((card) => (
-                    <Link
-                        key={card.href}
-                        href={card.href}
-                        className="dashboard-card"
-                        style={{ '--card-accent': card.color } as React.CSSProperties}
-                    >
-                        <div className="dashboard-card-header">
-                            <div
-                                className="dashboard-card-icon"
-                                style={{
-                                    backgroundColor: `${card.color}20`,
-                                    color: card.color
-                                }}
-                            >
-                                <card.icon size={24} />
+                {cards.map((card) => {
+                    let cardId = undefined;
+                    if (card.href === '/prompts') cardId = 'tour-prompts';
+                    if (card.href === '/context-builder') cardId = 'tour-context';
+
+                    return (
+                        <Link
+                            key={card.href}
+                            href={card.href}
+                            id={cardId}
+                            className="dashboard-card"
+                            style={{ '--card-accent': card.color } as React.CSSProperties}
+                        >
+                            <div className="dashboard-card-header">
+                                <div
+                                    className="dashboard-card-icon"
+                                    style={{
+                                        backgroundColor: `${card.color}20`,
+                                        color: card.color
+                                    }}
+                                >
+                                    <card.icon size={24} />
+                                </div>
+                                <h2>{card.title}</h2>
                             </div>
-                            <h2>{card.title}</h2>
-                        </div>
-                        <p>{card.description}</p>
-                    </Link>
-                ))}
+                            <p>{card.description}</p>
+                        </Link>
+                    );
+                })}
             </div>
         </div>
     );
