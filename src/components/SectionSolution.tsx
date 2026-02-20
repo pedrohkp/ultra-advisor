@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card"
 import { CheckCircle2, Zap, Database, Layers } from "lucide-react"
+import Image from "next/image"
 
 const benefits = [
     {
@@ -58,18 +59,33 @@ export function SectionSolution() {
                     </div>
 
                     <div className="relative">
-                        <Card className="w-full h-[500px] bg-[#0A1628]/80 border-blue-500/20 glow-blue overflow-hidden relative">
-                            {/* Visual Placeholder for Product Interface */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent p-8 flex flex-col items-center justify-center text-center">
-                                <Database className="w-20 h-20 text-blue-500/20 mb-4" />
-                                <p className="text-blue-500/40 text-sm uppercase tracking-widest font-mono">Interface do Sistema</p>
-                                <div className="mt-8 w-full max-w-sm space-y-4 opacity-50">
-                                    <div className="h-4 bg-blue-500/10 rounded w-3/4 mx-auto" />
-                                    <div className="h-4 bg-blue-500/10 rounded w-full" />
-                                    <div className="h-4 bg-blue-500/10 rounded w-5/6 mx-auto" />
+                        {/* Dashboard Mockup / Screenshot */}
+                        <div className="relative w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10">
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent z-10 pointer-events-none" />
+
+                            {/* Fake Browser Header */}
+                            <div className="bg-[#0F1F3D] border-b border-white/5 px-4 py-3 flex items-center gap-2">
+                                <div className="flex gap-1.5">
+                                    <div className="w-3 h-3 rounded-full bg-[#EF4444]" />
+                                    <div className="w-3 h-3 rounded-full bg-[#EAB308]" />
+                                    <div className="w-3 h-3 rounded-full bg-[#22C55E]" />
+                                </div>
+                                <div className="mx-auto bg-[#1A2B4F] text-xs text-gray-400 px-4 py-1.5 rounded-md max-w-sm w-full text-center border border-white/5">
+                                    ultra-advisor.com.br/dashboard
                                 </div>
                             </div>
-                        </Card>
+
+                            {/* Actual image */}
+                            <div className="relative aspect-[16/9] bg-[#0A1628] flex items-center justify-center overflow-hidden">
+                                <Image
+                                    src="/dashboard-preview.png"
+                                    alt="Dashboard Visão Geral"
+                                    fill
+                                    className="object-cover object-top"
+                                    unoptimized
+                                />
+                            </div>
+                        </div>
 
                         {/* Floating Badge */}
                         <div className="absolute -bottom-6 -left-6 bg-[#0F1F3D] border border-orange-500/20 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow">
