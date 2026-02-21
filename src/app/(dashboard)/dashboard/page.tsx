@@ -7,7 +7,6 @@ import {
 } from "lucide-react";
 import { HowItWorks } from "@/components/dashboard/HowItWorks";
 import { OnboardingTour } from "@/components/dashboard/OnboardingTour";
-import { ExpectationBanner } from "@/components/ui/expectation-banner";
 import "./dashboard.css";
 
 export default async function DashboardPage() {
@@ -49,11 +48,6 @@ export default async function DashboardPage() {
                 </h1>
                 <p>Escolha um prompt, leve para sua IA e aplique o resultado.</p>
             </header>
-
-            {/* Expectation Banner */}
-            <div className="mt-8">
-                <ExpectationBanner />
-            </div>
 
             {/* How It Works Section */}
             <HowItWorks />

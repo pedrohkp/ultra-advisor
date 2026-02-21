@@ -30,7 +30,7 @@ interface Prompt {
 
 type SortOption = 'popular' | 'newest' | 'alphabetical';
 
-export default function PromptsGrid({ prompts, hasAccess }: { prompts: Prompt[], hasAccess: boolean }) {
+export default function PromptsGrid({ prompts, hasAccess, fromJourney, preserveOrder }: { prompts: Prompt[], hasAccess: boolean, fromJourney?: string, preserveOrder?: boolean }) {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedPurpose, setSelectedPurpose] = useState<string | null>(null);
     const [sortBy, setSortBy] = useState<SortOption>('popular');
@@ -65,6 +65,8 @@ export default function PromptsGrid({ prompts, hasAccess }: { prompts: Prompt[],
 
     // Sort prompts
     const sortedPrompts = useMemo(() => {
+        if (preserveOrder) return filteredPrompts;
+
         const result = [...filteredPrompts];
         switch (sortBy) {
             case 'newest':
@@ -166,7 +168,7 @@ export default function PromptsGrid({ prompts, hasAccess }: { prompts: Prompt[],
                         return (
                             <Link
                                 key={prompt.id}
-                                href={`/prompts/${prompt.slug || prompt.id}`}
+                                href={fromJourney ? `/prompts/${prompt.slug || prompt.id}?fromJourney=${fromJourney}` : `/prompts/${prompt.slug || prompt.id}`}
                                 className="prompt-card h-full flex flex-col"
                             >
                                 {isLockedUI && (

@@ -9,15 +9,17 @@ import {
     FileText,
     BookOpen,
     Menu,
-    X
+    X,
+    Map
 } from "lucide-react"
 import Image from "next/image"
 import { UserButton, useUser } from "@clerk/nextjs"
 
 const menuItems = [
     { icon: LayoutDashboard, label: "Visão Geral", href: "/dashboard" },
-    { icon: Library, label: "Biblioteca de Prompts", href: "/prompts" },
     { icon: FileText, label: "Context Builder", href: "/context-builder" },
+    { icon: Library, label: "Biblioteca de Prompts", href: "/prompts" },
+    { icon: Map, label: "Jornadas", href: "/jornadas" },
     { icon: BookOpen, label: "Boas Práticas", href: "/boas-praticas" },
 ]
 

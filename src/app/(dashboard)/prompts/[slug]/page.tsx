@@ -15,11 +15,19 @@ import { CopyButton } from "@/components/ui/copy-button";
 import { ExpectationBanner } from "@/components/ui/expectation-banner";
 import "./prompt-detail.css";
 
+import { jornadas } from "@/data/jornadas";
+
 // Revalidate every 60 seconds
 export const revalidate = 60;
 
-export default async function PromptDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function PromptDetailsPage(
+    { params, searchParams }: { params: Promise<{ slug: string }>, searchParams: Promise<{ [key: string]: string | string[] | undefined }> }
+) {
     const { slug } = await params;
+    const resolvedSearchParams = await searchParams;
+    const fromJourney = resolvedSearchParams?.fromJourney as string | undefined;
+    const sourceJourney = fromJourney ? jornadas.find(j => j.id === fromJourney) : null;
+
     const user = await currentUser();
 
     // Ler metadata do Clerk
@@ -55,12 +63,15 @@ export default async function PromptDetailsPage({ params }: { params: Promise<{ 
         <div className="prompt-detail">
 
             {/* Back Link */}
-            <Link href="/prompts" className="prompt-detail-back mb-6 inline-flex">
-                <ArrowLeft size={16} /> Voltar para Biblioteca
-            </Link>
-
-            {/* Expectation Banner */}
-            <ExpectationBanner />
+            {sourceJourney ? (
+                <Link href={`/jornadas/${sourceJourney.id}`} className="prompt-detail-back mb-6 inline-flex">
+                    <ArrowLeft size={16} /> Retornar para a Jornada: {sourceJourney.title}
+                </Link>
+            ) : (
+                <Link href="/prompts" className="prompt-detail-back mb-6 inline-flex">
+                    <ArrowLeft size={16} /> Voltar para Biblioteca
+                </Link>
+            )}
 
             {/* Header */}
             <div className="prompt-detail-header">
@@ -87,6 +98,9 @@ export default async function PromptDetailsPage({ params }: { params: Promise<{ 
                     </p>
                 )}
             </div>
+
+            {/* Expectation Banner */}
+            <ExpectationBanner />
 
             {/* Layout Grid */}
             <div className="prompt-detail-grid">

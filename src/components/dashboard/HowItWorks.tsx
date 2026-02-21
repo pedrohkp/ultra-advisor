@@ -1,4 +1,5 @@
 import React from "react";
+import { ExpectationBanner } from "@/components/ui/expectation-banner";
 
 export function HowItWorks() {
     const steps = [
@@ -53,11 +54,15 @@ export function HowItWorks() {
                 ))}
             </div>
 
+            <div className="mt-8">
+                <ExpectationBanner />
+            </div>
+
             <div className="mt-8 text-center border-b border-white/10 pb-8">
                 <p className="text-sm text-white/60 max-w-2xl mx-auto leading-relaxed">
                     ⚡ Pense como um maestro: O ULTRA ADVISOR conduz, a IA executa!
                 </p>
             </div>
-        </div>
+        </div >
     );
 }
