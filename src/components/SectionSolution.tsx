@@ -61,7 +61,7 @@ export function SectionSolution() {
                     <div className="relative">
                         {/* Dashboard Mockup / Screenshot */}
                         <div className="relative w-full rounded-xl overflow-hidden border border-white/10 shadow-2xl shadow-blue-500/10">
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628] via-transparent to-transparent z-10 pointer-events-none" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/60 via-transparent to-transparent z-10 pointer-events-none" />
 
                             {/* Fake Browser Header */}
                             <div className="bg-[#0F1F3D] border-b border-white/5 px-4 py-3 flex items-center gap-2">
@@ -81,14 +81,14 @@ export function SectionSolution() {
                                     src="/dashboard-preview.png"
                                     alt="Dashboard Visão Geral"
                                     fill
-                                    className="object-cover object-top"
+                                    className="object-cover object-left-top"
                                     unoptimized
                                 />
                             </div>
                         </div>
 
                         {/* Floating Badge */}
-                        <div className="absolute -bottom-6 -left-6 bg-[#0F1F3D] border border-orange-500/20 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow">
+                        <div className="absolute -bottom-6 -left-6 z-20 bg-[#0F1F3D] border border-orange-500/20 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-slow">
                             <div className="w-10 h-10 rounded-full bg-orange-500/10 flex items-center justify-center">
                                 <Zap className="w-5 h-5 text-orange-500" />
                             </div>

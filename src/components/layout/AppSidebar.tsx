@@ -7,6 +7,7 @@ import {
     LayoutDashboard,
     Library,
     FileText,
+    BookOpen,
     Menu,
     X
 } from "lucide-react"
@@ -17,6 +18,7 @@ const menuItems = [
     { icon: LayoutDashboard, label: "Visão Geral", href: "/dashboard" },
     { icon: Library, label: "Biblioteca de Prompts", href: "/prompts" },
     { icon: FileText, label: "Context Builder", href: "/context-builder" },
+    { icon: BookOpen, label: "Boas Práticas", href: "/boas-praticas" },
 ]
 
 export function AppSidebar() {

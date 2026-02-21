@@ -1,12 +1,10 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { Building2, Target, Check, ArrowRight, ArrowLeft, Download, FileText, Lightbulb } from "lucide-react";
+import { Building2, Target, Check, ArrowRight, ArrowLeft, Download, FileText, Lightbulb, UserCircle2, Briefcase, ChevronRight } from "lucide-react";
 import { jsPDF } from "jspdf";
 
-// --- Data Model ---
-
-interface ContextFormData {
+interface CoreFormData {
     sector: string;
     businessModel: string;
     audience: string;
@@ -17,7 +15,14 @@ interface ContextFormData {
     sectorVices: string;
 }
 
+interface ContextFormData extends CoreFormData {
+    profileId: string | null;
+    profileAnswers: Record<string, string>;
+}
+
 const initialData: ContextFormData = {
+    profileId: null,
+    profileAnswers: {},
     sector: "",
     businessModel: "",
     audience: "",
@@ -31,7 +36,7 @@ const initialData: ContextFormData = {
 // --- Field Definitions ---
 
 interface FieldDef {
-    key: keyof ContextFormData;
+    key: keyof CoreFormData;
     label: string;
     hint: string;
     placeholder: string;
@@ -106,17 +111,88 @@ const FIELDS: FieldDef[] = [
     },
 ];
 
+// --- Profiles ---
+
+const PROFILES = [
+    {
+        id: "estrategico",
+        title: "Estratégico",
+        subtitle: "Dono e Alta Liderança",
+        questions: [
+            { key: "est_1", label: "Estrutura atual de liderança", hint: "Como está organizada sua equipe de gestão hoje? Quais funções críticas ainda dependem diretamente de você?", placeholder: "Ex.: Sou o único diretor comercial, mas tenho gerentes nas outras áreas..." },
+            { key: "est_2", label: "Maior alavanca de crescimento", hint: "Se você pudesse dobrar o resultado nos próximos 12 meses, onde apostaria: novo canal, novo produto, nova geografia ou otimização interna?", placeholder: "Ex.: Lançamento de um novo produto para a base atual..." },
+            { key: "est_3", label: "Principal gargalo de escala", hint: "O que impede sua empresa de crescer mais rápido hoje? Seja específico (capital, pessoas, processos, mercado).", placeholder: "Ex.: Falta de capital de giro e dificuldade em reter talentos técnicos..." },
+            { key: "est_4", label: "Decisão estratégica em aberto", hint: "Existe alguma decisão relevante que você está postergando? O que está travando?", placeholder: "Ex.: Preciso decidir se abro filial no exterior, mas ainda faltam dados de mercado..." }
+        ]
+    },
+    {
+        id: "comercial",
+        title: "Comercial / Vendas",
+        subtitle: "Gerente ou Diretor Comercial",
+        questions: [
+            { key: "com_1", label: "Estrutura do funil", hint: "Como está organizado seu funil hoje (prospecção, qualificação, proposta, fechamento)? Qual etapa concentra mais travamento?", placeholder: "Ex.: Geração de leads pelo inbound, mas a qualificação demora muito..." },
+            { key: "com_2", label: "Ciclo de venda", hint: "Qual o tempo médio entre o primeiro contato e o fechamento? O que mais alonga esse ciclo?", placeholder: "Ex.: 45 dias. O que mais demora é a aprovação jurídica do cliente..." },
+            { key: "com_3", label: "Principal motivo de perda", hint: "Por que os negócios não fecham? Identifique o motivo mais recorrente nos últimos 6 meses (preço, concorrência, timing, decisor, outro).", placeholder: "Ex.: Perdemos muito por preço quando o cliente compara com ferramentas mais baratas..." },
+            { key: "com_4", label: "Estratégia de precificação", hint: "Sua precificação é baseada em valor percebido, custo + margem ou pressão competitiva? Existe margem de manobra ou ela é engessada?", placeholder: "Ex.: Custo mais margem fixa de 30%..." }
+        ]
+    },
+    {
+        id: "operacional",
+        title: "Operacional",
+        subtitle: "Gestão de Times",
+        questions: [
+            { key: "ope_1", label: "Estrutura do time", hint: "Quantas pessoas você lidera diretamente? Quais funções? Onde estão os maiores gaps de performance?", placeholder: "Ex.: Lidero 12 pessoas (suporte e CS). O maior gap é a documentação técnica..." },
+            { key: "ope_2", label: "Processos críticos", hint: "Quais os 2 ou 3 processos mais importantes da sua área? Algum deles está documentado ou depende do conhecimento tácito de alguém?", placeholder: "Ex.: Processo de onboarding. Ele ainda depende muito da experiência do João..." },
+            { key: "ope_3", label: "Principal causa de retrabalho", hint: "O que mais gera ruído, perda de tempo ou erros repetidos na sua operação hoje?", placeholder: "Ex.: Clientes que preenchem formulários pela metade..." },
+            { key: "ope_4", label: "Métricas que você acompanha", hint: "Quais indicadores você monitora semanalmente para saber se a operação está saudável?", placeholder: "Ex.: SLA de primeira resposta, CSAT e tempo médio de conclusão..." }
+        ]
+    },
+    {
+        id: "especialista",
+        title: "Especialista Solo",
+        subtitle: "Empreendedor ou Freelancer",
+        questions: [
+            { key: "esp_1", label: "Sua entrega central", hint: "O que você faz de melhor e pelo qual os clientes pagam mais? Qual o resultado concreto que você entrega?", placeholder: "Ex.: Consultoria de tráfego pago focado em e-commerces B2C..." },
+            { key: "esp_2", label: "Como você consegue clientes hoje", hint: "Qual canal trouxe seus últimos 3 clientes? Foi ativo (prospecção) ou passivo (indicação/inbound)?", placeholder: "Ex.: Todos os últimos vieram por indicação boca a boca..." },
+            { key: "esp_3", label: "Gargalo de tempo", hint: "Em que atividade você passa tempo demais que não gera receita diretamente?", placeholder: "Ex.: Montando propostas comerciais que acabam demorando muito..." },
+            { key: "esp_4", label: "Teto atual", hint: "Qual o limite da sua operação hoje — horas disponíveis, preço máximo que o mercado aceita, ou dificuldade de fechar novos contratos?", placeholder: "Ex.: Cheguei no meu limite de horas semanais disponíveis..." }
+        ]
+    },
+    {
+        id: "inovacao",
+        title: "Inovação / Tech",
+        subtitle: "Implementador",
+        questions: [
+            { key: "ino_1", label: "Stack atual", hint: "Quais ferramentas, plataformas e sistemas compõem o seu ambiente de trabalho ou produto hoje?", placeholder: "Ex.: Usamos AWS, Node.js no back-end, React no front-end..." },
+            { key: "ino_2", label: "Maior problema técnico em aberto", hint: "Existe algum gargalo de arquitetura, integração ou automação que você ainda não resolveu e que trava sua operação?", placeholder: "Ex.: A integração com o gateway de pagamentos vira e mexe dá timeout..." },
+            { key: "ino_3", label: "Perfil dos usuários/clientes internos", hint: "Para quem você implementa soluções? Qual o nível de maturidade técnica deles?", placeholder: "Ex.: Implemento para o time comercial. Eles têm baixa maturidade tech e precisam de coisas muito visuais..." },
+            { key: "ino_4", label: "Critério de sucesso de uma implementação", hint: "Como você define que uma solução \"funcionou\"? Quais métricas ou sinais indicam isso?", placeholder: "Ex.: O tempo de processamento caiu e não tivemos tickets de suporte abertos..." }
+        ]
+    }
+];
+
 // Fields per step
 const STEP_1_FIELDS = FIELDS.filter(f => ["sector", "businessModel", "audience", "products"].includes(f.key));
 const STEP_2_FIELDS = FIELDS.filter(f => ["goals", "channels", "painPoints", "sectorVices"].includes(f.key));
 
 // --- Steps ---
 
-const steps = [
-    { id: 1, label: "Seu Negócio", icon: Building2 },
-    { id: 2, label: "Estratégia", icon: Target },
-    { id: 3, label: "Revisão & Download", icon: Download },
-];
+const getSteps = (profileId: string | null) => {
+    const baseSteps = [
+        { id: 1, label: "Perfil", icon: UserCircle2 },
+        { id: 2, label: "Seu Negócio", icon: Building2 },
+        { id: 3, label: "Estratégia", icon: Target },
+    ];
+
+    if (profileId) {
+        baseSteps.push({ id: 4, label: "Perguntas Específicas", icon: Lightbulb });
+        baseSteps.push({ id: 5, label: "Revisão & Download", icon: Download });
+    } else {
+        baseSteps.push({ id: 4, label: "Revisão & Download", icon: Download });
+    }
+
+    return baseSteps;
+};
 
 // --- Component ---
 
@@ -124,19 +200,39 @@ export function ContextWizard() {
     const [currentStep, setCurrentStep] = useState(1);
     const [formData, setFormData] = useState<ContextFormData>(initialData);
 
-    const updateField = (key: keyof ContextFormData, value: string) => {
+    const steps = getSteps(formData.profileId);
+    const totalSteps = steps.length;
+
+    const updateField = (key: keyof CoreFormData, value: string) => {
         setFormData(prev => ({ ...prev, [key]: value }));
+    };
+
+    const updateProfileField = (key: string, value: string) => {
+        setFormData(prev => ({
+            ...prev,
+            profileAnswers: { ...prev.profileAnswers, [key]: value }
+        }));
+    };
+
+    const selectProfile = (id: string | null) => {
+        setFormData(prev => ({ ...prev, profileId: id }));
     };
 
     // Only fields with content
     const filledFields = useMemo(() => {
-        return FIELDS.filter(f => formData[f.key].trim() !== "");
+        return FIELDS.filter(f => (formData[f.key as keyof CoreFormData] as string).trim() !== "");
     }, [formData]);
 
-    const hasAnyContent = filledFields.length > 0;
+    const activeProfile = formData.profileId ? PROFILES.find(p => p.id === formData.profileId) : null;
+    const filledProfileFields = useMemo(() => {
+        if (!activeProfile) return [];
+        return activeProfile.questions.filter(q => (formData.profileAnswers[q.key] || "").trim() !== "");
+    }, [activeProfile, formData.profileAnswers]);
+
+    const hasAnyContent = filledFields.length > 0 || filledProfileFields.length > 0;
 
     const handleNext = () => {
-        if (currentStep < 3) {
+        if (currentStep < totalSteps) {
             setCurrentStep(prev => prev + 1);
         }
     };
@@ -184,17 +280,14 @@ export function ContextWizard() {
         doc.line(margin, y, pageWidth - margin, y);
         y += 12;
 
-        // Sections — only filled ones
-        for (const field of filledFields) {
-            const value = formData[field.key].trim();
-
+        const renderPdfSection = (title: string, value: string) => {
             checkPageBreak(30);
 
             // Section title
             doc.setFont("helvetica", "bold");
             doc.setFontSize(13);
             doc.setTextColor(30, 30, 30);
-            doc.text(field.pdfTitle, margin, y);
+            doc.text(title, margin, y);
             y += 8;
 
             // Section content — split into bullet points by line breaks or semicolons
@@ -226,6 +319,32 @@ export function ContextWizard() {
             }
 
             y += 8; // gap between sections
+        };
+
+        // Sections — only filled ones
+        for (const field of filledFields) {
+            const value = (formData[field.key as keyof CoreFormData] as string).trim();
+            renderPdfSection(field.pdfTitle, value);
+        }
+
+        // Profile specific sections
+        if (activeProfile && filledProfileFields.length > 0) {
+            checkPageBreak(30);
+            y += 4;
+            doc.setDrawColor(200, 200, 200);
+            doc.line(margin, y, pageWidth - margin, y);
+            y += 8;
+
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(16);
+            doc.setTextColor(249, 115, 22); // Orange tint to highlight profile
+            doc.text(`Perfil Específico: ${activeProfile.title}`, margin, y);
+            y += 10;
+
+            for (const field of filledProfileFields) {
+                const value = formData.profileAnswers[field.key].trim();
+                renderPdfSection(field.label, value);
+            }
         }
 
         // Footer line
@@ -247,13 +366,13 @@ export function ContextWizard() {
 
     // --- Render Field ---
     const renderField = (field: FieldDef) => (
-        <div key={field.key} className="space-y-1.5">
-            <label className="block text-sm font-medium text-gray-200">
+        <div key={field.key} className="space-y-2">
+            <label className="block text-base font-semibold text-white">
                 {field.label}
-                <span className="text-gray-500 ml-1 text-xs font-normal">(opcional)</span>
+                <span className="text-gray-400 ml-2 text-sm font-normal">(opcional)</span>
             </label>
-            <p className="text-xs text-gray-500 flex items-start gap-1.5">
-                <Lightbulb size={12} className="mt-0.5 shrink-0 text-yellow-500/60" />
+            <p className="text-sm text-gray-300 flex items-start gap-2 leading-relaxed">
+                <Lightbulb size={16} className="mt-0.5 shrink-0 text-yellow-500/80" />
                 {field.hint}
             </p>
             {field.type === "input" ? (
@@ -262,82 +381,152 @@ export function ContextWizard() {
                     value={formData[field.key]}
                     onChange={(e) => updateField(field.key, e.target.value)}
                     placeholder={field.placeholder}
-                    className="w-full bg-[#0A1628] border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder:text-gray-600"
+                    className="w-full bg-[#0A1628] border border-gray-600 rounded-lg px-4 py-3 text-base text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder:text-gray-500"
                 />
             ) : (
                 <textarea
                     value={formData[field.key]}
                     onChange={(e) => updateField(field.key, e.target.value)}
-                    rows={3}
+                    rows={4}
                     placeholder={field.placeholder}
-                    className="w-full bg-[#0A1628] border border-gray-700 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder:text-gray-600 resize-none"
+                    className="w-full bg-[#0A1628] border border-gray-600 rounded-lg px-4 py-3 text-base text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder:text-gray-500 resize-none leading-relaxed"
                 />
             )}
         </div>
     );
 
-    // --- Render Step Content ---
+    // --- Render Form Content ---
+    const stepDef = steps[currentStep - 1];
+
+    const renderProfileField = (question: any) => (
+        <div key={question.key} className="space-y-2">
+            <label className="block text-base font-semibold text-white">
+                {question.label}
+                <span className="text-gray-400 ml-2 text-sm font-normal">(opcional)</span>
+            </label>
+            <p className="text-sm text-gray-300 flex items-start gap-2 leading-relaxed">
+                <Lightbulb size={16} className="mt-0.5 shrink-0 text-yellow-500/80" />
+                {question.hint}
+            </p>
+            <textarea
+                value={formData.profileAnswers[question.key] || ""}
+                onChange={(e) => updateProfileField(question.key, e.target.value)}
+                rows={4}
+                placeholder={question.placeholder}
+                className="w-full bg-[#0A1628] border border-gray-600 rounded-lg px-4 py-3 text-base text-white focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all placeholder:text-gray-500 resize-none leading-relaxed"
+            />
+        </div>
+    );
+
     const renderStepContent = () => {
-        switch (currentStep) {
-            case 1:
-                return (
-                    <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
-                        {STEP_1_FIELDS.map(renderField)}
+        if (stepDef.id === 1) {
+            return (
+                <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        {PROFILES.map(prof => (
+                            <button
+                                key={prof.id}
+                                onClick={() => { selectProfile(prof.id); handleNext(); }}
+                                className={`text-left flex flex-col items-start p-5 rounded-xl border transition-all ${formData.profileId === prof.id ? 'bg-orange-500/10 border-orange-500 shadow-lg shadow-orange-500/20' : 'bg-white/5 border-white/10 hover:bg-white/10'}`}
+                            >
+                                <h3 className="text-lg font-bold text-white mb-1">{prof.title}</h3>
+                                <p className="text-sm text-gray-400">{prof.subtitle}</p>
+                            </button>
+                        ))}
                     </div>
-                );
-            case 2:
-                return (
-                    <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
-                        {STEP_2_FIELDS.map(renderField)}
+                    <div className="pt-4 flex justify-end">
+                        <button onClick={() => { selectProfile(null); handleNext(); }} className="text-sm text-gray-400 hover:text-white transition-colors flex items-center gap-2">
+                            Pular esta etapa <ArrowRight size={14} />
+                        </button>
                     </div>
-                );
-            case 3:
-                return (
-                    <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
-                        {hasAnyContent ? (
-                            <>
-                                <div className="bg-blue-600/10 border border-blue-500/20 rounded-lg p-6 space-y-5">
-                                    <h3 className="text-lg font-semibold text-white flex items-center gap-2">
-                                        <Check size={20} className="text-blue-500" />
-                                        Resumo do seu Contexto
-                                    </h3>
+                </div>
+            );
+        }
+
+        if (stepDef.id === 2) {
+            return (
+                <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
+                    {STEP_1_FIELDS.map(renderField)}
+                </div>
+            );
+        }
+
+        if (stepDef.id === 3) {
+            return (
+                <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
+                    {STEP_2_FIELDS.map(renderField)}
+                </div>
+            );
+        }
+
+        if (stepDef.id === 4 && formData.profileId) {
+            return (
+                <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
+                    {activeProfile?.questions.map(renderProfileField)}
+                </div>
+            );
+        }
+
+        // Final Review Step (id 4 or 5)
+        return (
+            <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
+                {hasAnyContent ? (
+                    <>
+                        {/* Resumo do seu Contexto */}
+                        <div className="bg-blue-600/10 border border-blue-500/20 rounded-lg p-6 space-y-5">
+                            <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                                <Check size={20} className="text-blue-500" />
+                                Resumo do seu Contexto
+                            </h3>
+                            <dl className="space-y-4">
+                                {filledFields.map(field => (
+                                    <div key={field.key}>
+                                        <dt className="text-sm font-medium text-gray-400">{field.pdfTitle}</dt>
+                                        <dd className="mt-1 text-sm text-white whitespace-pre-line">{formData[field.key as keyof CoreFormData] as string}</dd>
+                                    </div>
+                                ))}
+                            </dl>
+                            {filledProfileFields.length > 0 && activeProfile && (
+                                <div className="pt-4 border-t border-blue-500/20 mt-4">
+                                    <h4 className="text-sm font-semibold text-orange-400 mb-4 flex items-center gap-2">
+                                        <Lightbulb size={16} /> Perfil: {activeProfile.title}
+                                    </h4>
                                     <dl className="space-y-4">
-                                        {filledFields.map(field => (
+                                        {filledProfileFields.map(field => (
                                             <div key={field.key}>
-                                                <dt className="text-sm font-medium text-gray-400">{field.pdfTitle}</dt>
-                                                <dd className="mt-1 text-sm text-white whitespace-pre-line">{formData[field.key]}</dd>
+                                                <dt className="text-sm font-medium text-gray-400">{field.label}</dt>
+                                                <dd className="mt-1 text-sm text-white whitespace-pre-line">{formData.profileAnswers[field.key]}</dd>
                                             </div>
                                         ))}
                                     </dl>
                                 </div>
+                            )}
+                        </div>
 
-                                <div className="flex flex-col items-center gap-4 pt-2">
-                                    <button
-                                        onClick={generatePDF}
-                                        className="bg-green-600 hover:bg-green-500 text-white px-10 py-3 rounded-lg font-bold transition-all transform hover:scale-[1.03] shadow-lg shadow-green-900/30 flex items-center gap-2"
-                                    >
-                                        <Download size={20} />
-                                        Gerar PDF
-                                    </button>
-                                    <p className="text-gray-500 text-sm text-center max-w-md">
-                                        O PDF será baixado com apenas os campos que você preencheu, formatado em tópicos e bullets.
-                                    </p>
-                                </div>
-                            </>
-                        ) : (
-                            <div className="text-center py-12">
-                                <FileText size={48} className="mx-auto text-gray-600 mb-4" />
-                                <h3 className="text-lg font-medium text-gray-400">Nenhum campo preenchido</h3>
-                                <p className="text-sm text-gray-500 mt-2">
-                                    Volte aos passos anteriores e preencha pelo menos um campo para gerar o PDF.
-                                </p>
-                            </div>
-                        )}
+                        <div className="flex flex-col items-center gap-4 pt-2">
+                            <button
+                                onClick={generatePDF}
+                                className="bg-green-600 hover:bg-green-500 text-white px-10 py-3 rounded-lg font-bold transition-all transform hover:scale-[1.03] shadow-lg shadow-green-900/30 flex items-center gap-2"
+                            >
+                                <Download size={20} />
+                                Gerar PDF
+                            </button>
+                            <p className="text-gray-500 text-sm text-center max-w-md">
+                                O PDF será baixado com apenas os campos que você preencheu, formatado em tópicos e bullets.
+                            </p>
+                        </div>
+                    </>
+                ) : (
+                    <div className="text-center py-12">
+                        <FileText size={48} className="mx-auto text-gray-600 mb-4" />
+                        <h3 className="text-lg font-medium text-gray-400">Nenhum campo preenchido</h3>
+                        <p className="text-sm text-gray-500 mt-2">
+                            Volte aos passos anteriores e preencha pelo menos um campo para gerar o PDF.
+                        </p>
                     </div>
-                );
-            default:
-                return null;
-        }
+                )}
+            </div>
+        );
     };
 
     return (
@@ -402,12 +591,16 @@ export function ContextWizard() {
                     <div className="mb-8 border-b border-white/5 pb-4">
                         <h2 className="text-2xl font-semibold text-white flex items-center gap-3">
                             {(() => {
-                                const StepIcon = steps[currentStep - 1].icon;
+                                const StepIcon = stepDef.icon;
                                 return <StepIcon className="text-blue-500" />;
                             })()}
-                            Passo {currentStep}: {steps[currentStep - 1].label}
+                            Passo {currentStep}: {stepDef.id === 1 ? "Qual perfil melhor descreve você?" : stepDef.label}
                         </h2>
-                        {currentStep < 3 && (
+                        {stepDef.id === 1 ? (
+                            <p className="text-sm text-gray-500 mt-2">
+                                Selecionar um perfil adiciona perguntas específicas para a sua realidade, tornando o seu PDF muito mais preciso. Prefere pular? Sem problema — as perguntas padrão já entregam um panorama completo.
+                            </p>
+                        ) : currentStep < totalSteps && (
                             <p className="text-sm text-gray-500 mt-2">
                                 Todos os campos são opcionais — preencha apenas o que for relevante.
                             </p>
@@ -420,7 +613,7 @@ export function ContextWizard() {
                     </div>
 
                     {/* Navigation */}
-                    {currentStep <= 3 && (
+                    {currentStep <= totalSteps && (
                         <div className="mt-8 pt-6 border-t border-white/5 flex justify-between items-center">
                             <button
                                 onClick={handleBack}
@@ -433,7 +626,7 @@ export function ContextWizard() {
                                 <ArrowLeft size={16} /> Voltar
                             </button>
 
-                            {currentStep < 3 && (
+                            {currentStep < totalSteps && stepDef.id !== 1 && (
                                 <button
                                     onClick={handleNext}
                                     className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-2.5 rounded-lg font-medium transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-blue-900/20 flex items-center gap-2"

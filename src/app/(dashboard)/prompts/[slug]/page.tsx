@@ -11,6 +11,8 @@ import { notFound } from "next/navigation";
 import { FormattedText } from "@/components/ui/formatted-text";
 import { CollapsibleExample } from "@/components/ui/collapsible-example";
 import { PromptOptimizer } from "@/components/prompts/PromptOptimizer";
+import { CopyButton } from "@/components/ui/copy-button";
+import { ExpectationBanner } from "@/components/ui/expectation-banner";
 import "./prompt-detail.css";
 
 // Revalidate every 60 seconds
@@ -53,9 +55,12 @@ export default async function PromptDetailsPage({ params }: { params: Promise<{ 
         <div className="prompt-detail">
 
             {/* Back Link */}
-            <Link href="/prompts" className="prompt-detail-back">
+            <Link href="/prompts" className="prompt-detail-back mb-6 inline-flex">
                 <ArrowLeft size={16} /> Voltar para Biblioteca
             </Link>
+
+            {/* Expectation Banner */}
+            <ExpectationBanner />
 
             {/* Header */}
             <div className="prompt-detail-header">
@@ -94,9 +99,7 @@ export default async function PromptDetailsPage({ params }: { params: Promise<{ 
                         <div className="prompt-content-bar">
                             <span className="prompt-content-bar-label">Template do Prompt</span>
                             {!isLocked && (
-                                <button className="prompt-copy-btn">
-                                    <Copy size={14} /> Copiar
-                                </button>
+                                <CopyButton text={prompt.content_template} className="prompt-copy-btn" />
                             )}
                         </div>
 
@@ -181,6 +184,6 @@ export default async function PromptDetailsPage({ params }: { params: Promise<{ 
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 }

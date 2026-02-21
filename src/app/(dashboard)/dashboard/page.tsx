@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { HowItWorks } from "@/components/dashboard/HowItWorks";
 import { OnboardingTour } from "@/components/dashboard/OnboardingTour";
+import { ExpectationBanner } from "@/components/ui/expectation-banner";
 import "./dashboard.css";
 
 export default async function DashboardPage() {
@@ -34,6 +35,7 @@ export default async function DashboardPage() {
             icon: History,
             href: "/history",
             color: "#F59E0B",
+            isComingSoon: true,
         },
     ];
 
@@ -43,10 +45,15 @@ export default async function DashboardPage() {
             {/* Welcome Header */}
             <header className="dashboard-welcome">
                 <h1>
-                    Olá, <span>{firstName}</span>! 👋
+                    Olá, <span>{firstName}</span>!
                 </h1>
                 <p>Escolha um prompt, leve para sua IA e aplique o resultado.</p>
             </header>
+
+            {/* Expectation Banner */}
+            <div className="mt-8">
+                <ExpectationBanner />
+            </div>
 
             {/* How It Works Section */}
             <HowItWorks />
@@ -59,27 +66,36 @@ export default async function DashboardPage() {
                     if (card.href === '/context-builder') cardId = 'tour-context';
 
                     return (
-                        <Link
-                            key={card.href}
-                            href={card.href}
-                            id={cardId}
-                            className="dashboard-card"
-                            style={{ '--card-accent': card.color } as React.CSSProperties}
-                        >
-                            <div className="dashboard-card-header">
-                                <div
-                                    className="dashboard-card-icon"
-                                    style={{
-                                        backgroundColor: `${card.color}20`,
-                                        color: card.color
-                                    }}
-                                >
-                                    <card.icon size={24} />
+                        <div key={card.href} className="relative group">
+                            <Link
+                                href={card.isComingSoon ? "#" : card.href}
+                                id={cardId}
+                                className={`dashboard-card h-full ${card.isComingSoon ? 'opacity-60 cursor-not-allowed pointer-events-none' : ''}`}
+                                style={{ '--card-accent': card.color } as React.CSSProperties}
+                            >
+                                <div className="dashboard-card-header">
+                                    <div
+                                        className="dashboard-card-icon"
+                                        style={{
+                                            backgroundColor: `${card.color}20`,
+                                            color: card.color
+                                        }}
+                                    >
+                                        <card.icon size={24} />
+                                    </div>
+                                    <h2>{card.title}</h2>
                                 </div>
-                                <h2>{card.title}</h2>
-                            </div>
-                            <p>{card.description}</p>
-                        </Link>
+                                <p>{card.description}</p>
+                            </Link>
+
+                            {card.isComingSoon && (
+                                <div className="absolute inset-0 flex items-center justify-center p-4 z-10 pointer-events-none">
+                                    <div className="bg-[#0F1F3D]/80 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest border border-white/20 backdrop-blur-sm shadow-xl shadow-black/50">
+                                        Em breve
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     );
                 })}
             </div>

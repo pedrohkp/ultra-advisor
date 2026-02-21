@@ -11,6 +11,7 @@ export function OnboardingTour() {
         const hasSeenTour = localStorage.getItem('ultraAdvisor_tour_v1');
         if (!hasSeenTour) {
             setRun(true);
+            localStorage.setItem('ultraAdvisor_tour_v1', 'true');
         }
     }, []);
 

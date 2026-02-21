@@ -55,7 +55,7 @@ export function HowItWorks() {
 
             <div className="mt-8 text-center border-b border-white/10 pb-8">
                 <p className="text-sm text-white/60 max-w-2xl mx-auto leading-relaxed">
-                    ⚡ O ULTRA ADVISOR não gera respostas — ele entrega os comandos certos para que <span className="font-semibold text-[var(--primary)]">você</span> extraia o máximo das IAs que já usa. Pense como um maestro: o prompt conduz, a IA executa.
+                    ⚡ Pense como um maestro: O ULTRA ADVISOR conduz, a IA executa!
                 </p>
             </div>
         </div>
