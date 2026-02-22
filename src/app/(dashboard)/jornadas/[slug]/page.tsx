@@ -1,5 +1,5 @@
 import { jornadas } from "@/data/jornadas"
-import { supabase } from "@/lib/supabase"
+import { getClient } from "@/lib/supabase"
 import { currentUser } from "@clerk/nextjs/server"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -29,6 +29,7 @@ export default async function JornadaDetailPage({ params }: PageProps) {
     const isPremiumUser = plan === 'premium';
     const hasAccess = isAdmin || isPremiumUser;
 
+    const supabase = await getClient();
     const { data: prompts, error } = await supabase
         .from('prompts')
         .select('id, title, slug, category_situation, category_niche, is_premium, description_short, created_at');

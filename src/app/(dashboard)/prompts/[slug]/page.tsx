@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { getClient } from "@/lib/supabase";
 import { currentUser } from "@clerk/nextjs/server";
 import Link from "next/link";
 import {
@@ -39,6 +39,7 @@ export default async function PromptDetailsPage(
     const isPremiumUser = plan === 'premium';
     const hasAccess = isAdmin || isPremiumUser;
 
+    const supabase = await getClient();
     let query = supabase.from('prompts').select('*').single();
 
     if (/^\d+$/.test(slug)) {

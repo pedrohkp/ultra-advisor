@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { getClient } from "@/lib/supabase";
 import { currentUser } from "@clerk/nextjs/server";
 import PromptsGrid from "@/components/prompts/PromptsGrid";
 import "@/components/prompts/prompts.css";
@@ -17,6 +17,7 @@ export default async function PromptsPage() {
     const isPremiumUser = plan === 'premium';
     const hasAccess = isAdmin || isPremiumUser;
 
+    const supabase = await getClient();
     const { data: prompts, error } = await supabase
         .from('prompts')
         .select('id, title, slug, category_situation, category_niche, is_premium, description_short, created_at')
