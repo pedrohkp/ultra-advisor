@@ -17,7 +17,7 @@ import { UserButton, useUser } from "@clerk/nextjs"
 
 const menuItems = [
     { icon: LayoutDashboard, label: "Visão Geral", href: "/dashboard" },
-    { icon: FileText, label: "Context Builder", href: "/context-builder" },
+    { icon: FileText, label: "Context Wizard", href: "/context-builder" },
     { icon: Library, label: "Biblioteca de Prompts", href: "/prompts" },
     { icon: Map, label: "Jornadas", href: "/jornadas" },
     { icon: BookOpen, label: "Boas Práticas", href: "/boas-praticas" },

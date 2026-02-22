@@ -12,6 +12,12 @@ export default function JornadasHubPage() {
                 <h1 className="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
                     <Icons.Map className="w-8 h-8 text-orange-500" />
                     Jornadas
+                    <div className="relative group flex items-center ml-1">
+                        <Icons.Info className="w-5 h-5 text-white/40 cursor-help hover:text-white/80 transition-colors" />
+                        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 w-72 p-3 bg-[#1E2330] border border-white/10 rounded-lg text-sm text-white/80 shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50 font-normal tracking-normal text-center">
+                            <strong>Jornadas</strong> = sequência recomendada de comandos para resolver um objetivo específico (ex.: lançar produto).
+                        </div>
+                    </div>
                 </h1>
                 <p className="text-white/60 text-lg max-w-2xl">
                     Rotas guiadas com sequências de prompts selecionados para resolver os desafios mais complexos do seu negócio.

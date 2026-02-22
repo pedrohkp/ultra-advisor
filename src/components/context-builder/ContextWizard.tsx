@@ -422,6 +422,12 @@ export function ContextWizard() {
         if (stepDef.id === 1) {
             return (
                 <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-300">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-green-500/10 border border-green-500/20 w-full text-left">
+                        <span className="text-green-500 text-lg mt-0.5">🔒</span>
+                        <p className="text-sm text-green-100/90 leading-relaxed m-0">
+                            <strong>Privacidade Garantida:</strong> Seus dados são processados localmente no seu navegador para gerar o contexto e não são armazenados em nossos servidores.
+                        </p>
+                    </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         {PROFILES.map(prof => (
                             <button
@@ -504,6 +510,12 @@ export function ContextWizard() {
                         </div>
 
                         <div className="flex flex-col items-center gap-4 pt-2">
+                            <div className="flex items-start gap-3 p-3 rounded-lg bg-green-500/10 border border-green-500/20 max-w-md text-left mb-2">
+                                <span className="text-green-500 text-base mt-0.5">🔒</span>
+                                <p className="text-xs text-green-100/90 leading-relaxed m-0">
+                                    <strong>Privacidade Garantida:</strong> Seus dados são processados localmente e não são armazenados em nossos servidores.
+                                </p>
+                            </div>
                             <button
                                 onClick={generatePDF}
                                 className="bg-green-600 hover:bg-green-500 text-white px-10 py-3 rounded-lg font-bold transition-all transform hover:scale-[1.03] shadow-lg shadow-green-900/30 flex items-center gap-2"

@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card"
-import { CheckCircle2, Zap, Database, Layers } from "lucide-react"
+import { CheckCircle2, Zap, Database, Layers, Search } from "lucide-react"
 import Image from "next/image"
 
 const benefits = [
@@ -10,13 +10,18 @@ const benefits = [
     },
     {
         icon: Database,
-        title: "Contexto da sua empresa integrado",
-        description: "O Context Builder garante que a IA entenda seu negócio antes de responder."
+        title: "Contexto + Otimização de IA",
+        description: "O Context Wizard entende sua empresa e nosso Agente Otimizador refina seu comando antes do uso."
     },
     {
         icon: Layers,
-        title: "Comandos prontos para copiar e colar",
-        description: "Sem engenharia de prompt complexa. É só preencher e rodar."
+        title: "Comandos prontos para copiar",
+        description: "Fizemos o trabalho de engenharia para você. É só preencher e rodar no seu ChatGPT, Gemini ou Claude."
+    },
+    {
+        icon: Search,
+        title: "Prompt Finder (Agente de IA Integrado)",
+        description: "Não sabe qual framework usar? Descreva sua dor e a IA recomenda a solução exata para o seu momento."
     }
 ]
 
@@ -40,7 +45,7 @@ export function SectionSolution() {
                         </h2>
 
                         <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                            O ULTRA ADVISOR não é apenas um &quot;pack de prompts&quot;. É um sistema completo com 35+ frameworks estruturados, Context Builder e Agentes Otimizadores.
+                            O ULTRA ADVISOR não é apenas um &quot;pack de prompts&quot;. É um sistema completo com 35+ frameworks estruturados, Context Wizard e Agentes Otimizadores.
                         </p>
 
                         <div className="space-y-6">

@@ -5,8 +5,8 @@ export function HowItWorks() {
     const steps = [
         {
             number: "1",
-            title: "CONSTRUA SEU CONTEXTO",
-            description: "Use o Context Builder para gerar seu PDF com o panorama completo da sua empresa.",
+            title: "1. CONSTRUA SEU CONTEXTO",
+            description: "Use o Context Wizard para gerar seu PDF com o panorama completo da sua empresa.",
         },
         {
             number: "2",

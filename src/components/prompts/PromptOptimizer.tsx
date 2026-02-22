@@ -126,35 +126,44 @@ Não faça perguntas adicionais. Inicie a sua resposta imediatamente utilizando 
 
             {/* Input + Button */}
             {!finalPrompt && (
-                <div className="optimizer-input-row">
-                    <div className="optimizer-textarea-wrapper">
-                        <textarea
-                            value={userInput}
-                            onChange={(e) => setUserInput(e.target.value)}
-                            placeholder="Descreva seu cenário, problema ou ideia que deseja analisar com este framework..."
-                            rows={4}
-                            disabled={isLoading}
-                            className="optimizer-textarea"
-                        />
+                <>
+                    <div className="flex items-start gap-3 p-3 rounded-lg bg-[#3B82F6]/10 border border-[#3B82F6]/20 mb-4">
+                        <span className="text-[#3B82F6] text-lg mt-0.5">ℹ️</span>
+                        <p className="text-xs text-blue-100/80 leading-relaxed m-0">
+                            <strong>O que fazer aqui?</strong> Descreva sua ideia ou rascunho de forma simples. Nossa IA não responderá à sua dúvida aqui, mas vai transformar seu rascunho em um <strong>Prompt de Alta Performance</strong>, pronto para ser copiado e colado no ChatGPT ou Claude.
+                        </p>
                     </div>
-                    <button
-                        onClick={handleOptimize}
-                        disabled={isLoading || !userInput.trim()}
-                        className={`optimizer-btn ${isLoading ? 'loading' : ''}`}
-                    >
-                        {isLoading ? (
-                            <>
-                                <Loader2 size={20} className="spinner" />
-                                <span className="loading-text">Analisando...</span>
-                            </>
-                        ) : (
-                            <>
-                                <Zap size={20} />
-                                <span>Otimizar</span>
-                            </>
-                        )}
-                    </button>
-                </div>
+
+                    <div className="optimizer-input-row">
+                        <div className="optimizer-textarea-wrapper">
+                            <textarea
+                                value={userInput}
+                                onChange={(e) => setUserInput(e.target.value)}
+                                placeholder="Descreva seu cenário, problema ou ideia que deseja analisar com este framework..."
+                                rows={4}
+                                disabled={isLoading}
+                                className="optimizer-textarea"
+                            />
+                        </div>
+                        <button
+                            onClick={handleOptimize}
+                            disabled={isLoading || !userInput.trim()}
+                            className={`optimizer-btn ${isLoading ? 'loading' : ''}`}
+                        >
+                            {isLoading ? (
+                                <>
+                                    <Loader2 size={20} className="spinner" />
+                                    <span className="loading-text">Analisando...</span>
+                                </>
+                            ) : (
+                                <>
+                                    <Zap size={20} />
+                                    <span>Otimizar</span>
+                                </>
+                            )}
+                        </button>
+                    </div>
+                </>
             )}
 
             {/* Error */}

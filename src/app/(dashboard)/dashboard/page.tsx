@@ -22,7 +22,7 @@ export default async function DashboardPage() {
             color: "#3B82F6",
         },
         {
-            title: "Context Builder",
+            title: "Context Wizard",
             description: "Crie e gerencie contextos para personalizar suas IAs.",
             icon: FileText,
             href: "/context-builder",

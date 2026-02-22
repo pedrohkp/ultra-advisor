@@ -13,6 +13,7 @@ import { CollapsibleExample } from "@/components/ui/collapsible-example";
 import { PromptOptimizer } from "@/components/prompts/PromptOptimizer";
 import { CopyButton } from "@/components/ui/copy-button";
 import { ExpectationBanner } from "@/components/ui/expectation-banner";
+import { FinderBackButton } from "@/components/ui/finder-back-button";
 import "./prompt-detail.css";
 
 import { jornadas } from "@/data/jornadas";
@@ -67,6 +68,8 @@ export default async function PromptDetailsPage(
                 <Link href={`/jornadas/${sourceJourney.id}`} className="prompt-detail-back mb-6 inline-flex">
                     <ArrowLeft size={16} /> Retornar para a Jornada: {sourceJourney.title}
                 </Link>
+            ) : resolvedSearchParams?.from === 'finder' ? (
+                <FinderBackButton />
             ) : (
                 <Link href="/prompts" className="prompt-detail-back mb-6 inline-flex">
                     <ArrowLeft size={16} /> Voltar para Biblioteca

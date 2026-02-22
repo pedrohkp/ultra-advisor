@@ -41,8 +41,14 @@ ${userInput.trim()}`;
 
         if (!n8nResponse.ok) {
             console.error("n8n optimizer error:", n8nResponse.status, n8nResponse.statusText);
+
+            let errorMessage = `Erro no servidor de IA: ${n8nResponse.statusText}`;
+            if (n8nResponse.status === 404) {
+                errorMessage = "O serviço de otimização de prompts está temporariamente indisponível. Por favor, tente novamente em alguns instantes.";
+            }
+
             return NextResponse.json(
-                { error: `Erro no servidor de IA: ${n8nResponse.statusText}` },
+                { error: errorMessage },
                 { status: n8nResponse.status }
             );
         }

@@ -34,7 +34,7 @@ export default function BestPracticesPage() {
                         <li className="flex items-start gap-3">
                             <span className="text-green-500 mt-1">•</span>
                             <div>
-                                <strong className="text-white block mb-1">Sempre use o Context Builder primeiro.</strong>
+                                <strong className="text-white block mb-1">Sempre use o Context Wizard primeiro.</strong>
                                 A IA precisa conhecer o panorama e as métricas do seu negócio antes de receber um framework complexo. Sem contexto, a resposta será genérica.
                             </div>
                         </li>
@@ -74,6 +74,13 @@ export default function BestPracticesPage() {
                                         <span><strong className="text-white">Gemini (Advanced/Pro):</strong> Ideal para analisar volumes massivos de dados de uma só vez (janela de contexto gigante) e integrar com o ecossistema Google.</span>
                                     </li>
                                 </ul>
+                            </div>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <span className="text-green-500 mt-1">•</span>
+                            <div>
+                                <strong className="text-white block mb-1">Validação Multi-Modelo (Triangulação).</strong>
+                                Para decisões críticas, não dependa de apenas uma resposta. Rode o mesmo prompt em modelos diferentes (ex.: Claude 3.5 Sonnet e GPT-4o). Essa estratégia triangulará as análises, revelando padrões ocultos e garantindo uma resolução à prova de falhas e vieses únicos.
                             </div>
                         </li>
                     </ul>

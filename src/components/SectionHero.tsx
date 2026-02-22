@@ -17,19 +17,18 @@ export function SectionHero() {
                     <span className="text-blue-400 font-medium">Biblioteca com 35+ frameworks validados</span>
                 </Badge>
 
-                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-4xl leading-tight">
-                    Frameworks estratégicos <br className="hidden md:block" />
-                    prontos para uso que transformam IAs genéricas em <span className="text-gradient">consultores de elite</span>.
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 max-w-5xl leading-tight">
+                    Comandos de Elite validados que extraem o melhor da IA <br className="hidden md:block" /> em qualquer chat — por menos de 1% do custo de uma consultoria real.
                 </h1>
 
-                <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl leading-relaxed">
-                    Decida com clareza em minutos usando modelos mentais de estratégia aplicados no seu fluxo de ChatGPT, Claude ou Gemini.
+                <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-3xl leading-relaxed mx-auto">
+                    Ultra Advisor usa Engenharia de Prompt de 2ª Geração — comandos estruturados e livres de viés que expõem o que você ainda não vê. O resultado: planos estratégicos prontos em minutos, decisões mais seguras e zero retrabalho.
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                     <Link href="#planos">
                         <Button size="lg" className="px-8 text-base h-12 shadow-lg shadow-orange-500/20">
-                            Ver planos
+                            Desbloquear meus Comandos de Elite
                         </Button>
                     </Link>
                     <Link href="#biblioteca">
@@ -38,6 +37,11 @@ export function SectionHero() {
                             Explorar biblioteca
                         </Button>
                     </Link>
+                </div>
+
+                <div className="mt-8 flex items-center gap-2 text-sm text-gray-400">
+                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <span>Agora com <strong className="text-white">Agentes de I.A. Integrados</strong> (Prompt Finder & Agente Otimizador)</span>
                 </div>
 
             </div>

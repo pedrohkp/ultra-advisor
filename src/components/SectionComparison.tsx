@@ -10,10 +10,10 @@ const plans = [
         description: "Para quem quer acesso imediato à biblioteca.",
         features: [
             { text: "Acesso limitado à biblioteca", included: true },
-            { text: "Context Builder Agent", included: true },
+            { text: "Context Wizard", included: true },
             { text: "Guia de usos + exemplos", included: true },
             { text: "Atualizações vitalícias (acesso limitado)", included: true },
-            { text: "Trial Optimizer (5 usos)", included: true },
+            { text: "Agente Otimizador (5 usos)", included: true },
         ],
         cta: "Começar com Base",
         variant: "secondary",
@@ -26,12 +26,12 @@ const plans = [
         description: "A experiência completa para consultoria de elite.",
         features: [
             { text: "Biblioteca expandida", included: true },
-            { text: "Context Builder Agent", included: true },
+            { text: "Context Wizard", included: true },
             { text: "Guia de usos + exemplos", included: true },
             { text: "Atualizações vitalícias (full access)", included: true },
-            { text: "Optimizer Agent ilimitado", included: true },
+            { text: "Agente Otimizador (ilimitado)", included: true },
             { text: "Exemplos de casos reais", included: true },
-            { text: "Prompt Finder (em breve...)", included: true },
+            { text: "Prompt Finder (I.A.)", included: true }
         ],
         cta: "Escolher Premium",
         variant: "default",
@@ -102,9 +102,6 @@ export function SectionComparison() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <p className="text-sm text-gray-500">
-                        Garantia de 7 dias para o plano Base e 30 dias para o Premium.
-                    </p>
                 </div>
             </div>
         </section>

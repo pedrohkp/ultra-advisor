@@ -4,17 +4,17 @@ const steps = [
     {
         icon: ClipboardList,
         title: "1. Crie seu contexto",
-        description: "Responda 10-15 perguntas no Context Builder e gere um PDF estruturado com o DNA da sua empresa."
+        description: "Responda 10-15 perguntas no Context Wizard e gere um PDF estruturado com o DNA da sua empresa."
     },
     {
         icon: Search,
         title: "2. Escolha o framework",
-        description: "Navegue pela biblioteca organizada por categoria"
+        description: "Navegue pela biblioteca ou descreva seu problema para nossa I.A. recomendar o framework ideal."
     },
     {
         icon: Zap,
-        title: "3. Gere o comando",
-        description: "Copie o prompt validado e insira seu contexto na IA de sua preferência, receba uma análise de nível executivo da IA."
+        title: "3. Otimize e Gere",
+        description: "Copie o prompt validado ou deixe nosso Agente Otimizador refiná-lo automaticamente antes do uso."
     }
 ]
 

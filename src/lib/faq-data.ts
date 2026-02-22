@@ -4,24 +4,28 @@ export const faqData = [
         answer: "É uma biblioteca com 35+ frameworks estratégicos prontos para uso, desenhados para transformar IAs genéricas (como ChatGPT, Claude e Gemini) em consultores de elite, melhorando a qualidade das suas decisões de negócio."
     },
     {
-        question: "Qual a diferença entre Base e Premium?",
-        answer: "O plano Base inclui a biblioteca completa e o Context Builder. O plano Premium adiciona o Optimizer Agent ilimitado, suporte a prompts Multi-Step, 15 prompts exclusivos extras, 30 casos reais setoriais e garantia estendida de 30 dias."
+        id: "item-2",
+        question: "Qual a diferença entre os planos Base e Premium?",
+        answer: "O plano Base inclui a biblioteca completa e o Context Wizard. O plano Premium adiciona o Agente Otimizador Ilimitado, suporte a prompts Multi-Step, 15 prompts exclusivos extras, 30 casos reais setoriais e integrações avançadas."
     },
     {
-        question: "Eu preciso saber programar?",
-        answer: "Não. O ULTRA ADVISOR entrega comandos prontos. Sua única tarefa é usar o nosso Context Builder para gerar seu perfil de empresa e, em seguida, copiar e colar os prompts na sua IA preferida."
+        id: "item-3",
+        question: "Preciso ter conhecimento técnico (programação) para usar?",
+        answer: "Não. O ULTRA ADVISOR entrega comandos prontos. Sua única tarefa é usar o nosso Context Wizard para gerar seu perfil de empresa e, em seguida, copiar e colar os prompts na sua IA preferida."
     },
     {
-        question: "Funciona com qual IA?",
-        answer: "Os frameworks são agnósticos e foram testados exhaustivamente com ChatGPT (GPT-4), Claude 3 (Opus/Sonnet) e Google Gemini. A estrutura lógica funciona em qualquer LLM de alta capacidade."
+        id: "item-4",
+        question: "Quais IAs são compatíveis com os frameworks?",
+        answer: "Todos os nossos prompts foram otimizados e testados exaustivamente nos três principais modelos de mercado: ChatGPT (GPT-4), Claude (Opus/Sonnet) e Google Gemini. A estrutura lógica funciona em qualquer LLM avançado."
     },
     {
-        question: "O que é o Context Builder?",
-        answer: "É um formulário inteligente que coleta informações cruciais sobre sua empresa (modelo de negócio, público, diferenciais) e gera um bloco de texto estruturado. Esse 'DNA' é usado em todos os prompts para garantir respostas personalizadas."
+        id: "item-5",
+        question: "O que é o Context Wizard?",
+        answer: "É uma ferramenta exclusiva onde você responde um questionário de 10 minutos sobre seu negócio. Ele magicamente gera um super-prompt de contexto que você insere na IA antes de usar os frameworks, garantindo respostas 100% personalizadas."
     },
     {
-        question: "O que é o Optimizer Agent?",
-        answer: "Uma ferramenta (disponível no plano Premium) que refinou o seu input inicial. Você diz 'quero lançar um produto', e o Agente reescreve seu pedido aplicando as melhores práticas de engenharia de prompt antes de você enviar para a IA."
+        question: "O que é o Agente Otimizador?",
+        answer: "Uma ferramenta (disponível no plano Premium) que refina o seu input inicial. Você diz 'quero lançar um produto', e o Agente reescreve seu pedido aplicando as melhores práticas de engenharia de prompt antes de você enviar para a IA."
     },
     {
         question: "Posso usar em mais de uma empresa?",

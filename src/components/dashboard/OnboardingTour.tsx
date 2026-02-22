@@ -35,8 +35,8 @@ export function OnboardingTour() {
             content: (
                 <div className="text-left">
                     <h3 className="text-lg font-bold text-emerald-400 mb-2">📍 Comece pelo Contexto</h3>
-                    <p className="text-white/80 text-sm">
-                        Crie o seu "Context Builder". Ele vai extrair as informações vitais da sua empresa ou cliente para que a IA te entenda perfeitamente. Faça isso antes de usar prompts complexos!
+                    <p className="text-gray-400">
+                        Crie o seu &quot;Context Wizard&quot;. Ele vai extrair as informações vitais da sua empresa ou cliente para que a IA te entenda perfeitamente. Faça isso antes de usar prompts complexos!
                     </p>
                 </div>
             ),

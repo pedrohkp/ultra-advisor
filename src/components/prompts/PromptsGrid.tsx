@@ -3,6 +3,7 @@
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { Search, Lock, Play, BarChart3, Target, Brain, CheckCircle, Zap, MessageSquare, Rocket } from 'lucide-react';
+import { PromptFinder } from './PromptFinder';
 
 // Purpose category icons and colors
 const PURPOSE_CONFIG: Record<string, { icon: any; color: string }> = {
@@ -86,6 +87,11 @@ export default function PromptsGrid({ prompts, hasAccess, fromJourney, preserveO
 
     return (
         <div>
+            {/* AI Prompt Finder */}
+            <div className="mb-12">
+                <PromptFinder />
+            </div>
+
             {/* Controls Section */}
             <div className="prompts-controls">
                 {/* Search Bar */}

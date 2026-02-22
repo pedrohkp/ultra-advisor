@@ -14,7 +14,7 @@ export default async function ContextBuilderPage() {
                     <span>Ferramenta de Criação</span>
                 </div>
                 <h1 className="text-4xl font-bold text-white tracking-tight">
-                    Context Builder
+                    Context Wizard
                 </h1>
                 <p className="text-gray-400 text-lg max-w-2xl">
                     Preencha as informações do seu negócio e baixe um PDF estruturado para alimentar suas conversas com IA.
